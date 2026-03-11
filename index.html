@@ -26,7 +26,8 @@
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 0.5rem 2rem; /* Reduced padding for slim look */
+            /* Vertical padding increased slightly to allow logo to breathe */
+            padding: 1.2rem 2rem; 
         }
 
         .header-container {
@@ -37,18 +38,23 @@
             margin: 0 auto;
         }
 
-        /* LOGO SCALING */
+        /* LOGO: INCREASED BY 3X & BUFFERED */
         .logo-box img {
-            height: 80px; /* Large enough to be seen clearly */
+            /* 3x increase from previous standard - Commanding Presence */
+            height: 240px; 
             width: auto;
-            transition: transform 0.3s ease;
+            display: block;
+            /* Prevents touching the top/bottom of the slim header */
+            margin: 10px 0; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        
         .logo-box img:hover {
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
-            transform: scale(1.05);
+            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+            transform: scale(1.02);
         }
 
-        /* NAVIGATION: CENTERED & SLIM */
+        /* NAVIGATION: CENTERED & STABILIZED */
         .nav-center {
             display: flex;
             gap: 2.5rem;
@@ -60,7 +66,7 @@
         .nav-center a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
         .nav-center a:hover { color: var(--gold); }
 
-        /* GAMIFIED CARDS STYLE (MAINTAINED) */
+        /* GAMIFIED CARDS STYLE */
         .quest-card {
             background: linear-gradient(145deg, #111, #050505);
             border: 2px solid #222;
@@ -69,7 +75,7 @@
         .xp-fill { height: 100%; background: var(--xp-green); box-shadow: 0 0 10px var(--xp-green); }
     </style>
 </head>
-<body class="antialiased pt-24"> <header>
+<body class="antialiased pt-64"> <header>
         <div class="header-container">
             <div class="logo-box">
                 <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO">
@@ -84,62 +90,91 @@
             </nav>
 
             <div class="hidden lg:block">
-                <button class="bg-white text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-tighter">Series A Access</button>
+                <div class="text-[9px] font-black text-gold tracking-widest border border-gold/30 px-4 py-2 rounded-sm uppercase">
+                    Level: Vanguard Oracle
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="py-20 px-12 max-w-7xl mx-auto">
-        <h2 class="serif text-7xl mb-8">Empowering the <br><span class="text-gold">Next-Gen Elite.</span></h2>
+    <section class="py-32 px-12 max-w-7xl mx-auto">
+        <h2 class="serif text-8xl mb-12">Empowering the <br><span class="text-gold italic">Next-Gen Elite.</span></h2>
         <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <p class="text-xl text-gray-400 leading-relaxed">
-                Mentoring community youth to fulfill U.S. Government contracts. We align with the Department of Education and the Lenfest Institute to turn potential into national security excellence.
+            <p class="text-2xl text-gray-400 font-light leading-relaxed">
+                We are mentoring community youth to fulfill high-stakes U.S. Government contracts. Through Vexilla Foundation, we align with the Department of Education and the Lenfest Institute to turn raw local potential into national security excellence.
             </p>
-            <img src="hero_front.jpg" alt="Makinzine Pro" class="rounded-3xl border-4 border-white/5 shadow-2xl">
-        </div>
-    </section>
-
-    <section class="py-24 px-12 bg-[#080808]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="quest-card p-10 rounded-3xl">
-                <h4 class="text-2xl font-bold mb-2">Squire Rank</h4>
-                <div class="xp-bar my-4"><div class="xp-fill" style="width: 30%;"></div></div>
-                <div class="text-3xl font-black mb-6">$25<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full bg-white text-black font-bold py-3 rounded-xl uppercase text-xs">Start Quest</button>
-            </div>
-            <div class="quest-card p-10 rounded-3xl border-gold/50">
-                <h4 class="text-2xl font-bold mb-2 text-gold">Vanguard Knight</h4>
-                <div class="xp-bar my-4"><div class="xp-fill" style="width: 75%;"></div></div>
-                <div class="text-3xl font-black mb-6">$150<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full bg-gold text-black font-bold py-3 rounded-xl uppercase text-xs">Ascend Now</button>
-            </div>
-            <div class="quest-card p-10 rounded-3xl">
-                <h4 class="text-2xl font-bold mb-2">Oracle Founder</h4>
-                <div class="xp-bar my-4"><div class="xp-fill" style="width: 100%;"></div></div>
-                <div class="text-3xl font-black mb-6">$500<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full border border-white text-white font-bold py-3 rounded-xl uppercase text-xs">Unlock God Mode</button>
+            <div class="relative">
+                <img src="hero_front.jpg" alt="Makinzine Pro" class="rounded-[40px] border-4 border-white/5 shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-gold text-black p-6 font-black text-xs uppercase tracking-widest">Gov-Certified 2026</div>
             </div>
         </div>
     </section>
 
-    <footer class="pt-24 pb-12 px-12 bg-black border-t-2 border-gold">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-16 mb-20">
+    <section class="py-32 px-12 bg-[#050505] border-y border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+            <div class="quest-card p-12 rounded-[2.5rem]">
+                <div class="flex justify-between items-start mb-8">
+                    <h4 class="text-3xl font-black italic">Squire</h4>
+                    <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full uppercase">LVL 01</span>
+                </div>
+                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 30%;"></div></div>
+                <p class="text-xs text-gray-500 mb-8">Initiate your impact. Support technical mentorship for local Philadelphia youth.</p>
+                <div class="text-4xl font-black mb-8">$25<span class="text-xs text-gray-400">/MO</span></div>
+                <button class="w-full bg-white text-black font-black py-4 rounded-2xl uppercase text-xs tracking-widest hover:bg-xp-green transition">Start Quest</button>
+            </div>
+            <div class="quest-card p-12 rounded-[2.5rem] border-gold">
+                <div class="flex justify-between items-start mb-8">
+                    <h4 class="text-3xl font-black italic text-gold">Knight</h4>
+                    <span class="text-[10px] bg-gold text-black px-3 py-1 rounded-full uppercase font-bold">LVL 50</span>
+                </div>
+                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 75%;"></div></div>
+                <p class="text-xs text-gray-300 mb-8">Command the mission. Fully fund Gov-Contract training for a community mentorship pod.</p>
+                <div class="text-4xl font-black text-gold mb-8">$150<span class="text-xs text-gray-400">/MO</span></div>
+                <button class="w-full bg-gold text-black font-black py-4 rounded-2xl uppercase text-xs tracking-widest hover:bg-white transition">Ascend Now</button>
+            </div>
+            <div class="quest-card p-12 rounded-[2.5rem]">
+                <div class="flex justify-between items-start mb-8">
+                    <h4 class="text-3xl font-black italic">Oracle</h4>
+                    <span class="text-[10px] bg-blue-500 text-white px-3 py-1 rounded-full uppercase font-bold">MAX</span>
+                </div>
+                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 100%;"></div></div>
+                <p class="text-xs text-gray-500 mb-8">Unlock God Mode. Influence foundation policy and schedule high-profile tech events.</p>
+                <div class="text-4xl font-black mb-8">$500<span class="text-xs text-gray-400">/MO</span></div>
+                <button class="w-full border-2 border-white text-white font-black py-4 rounded-2xl uppercase text-xs tracking-widest hover:bg-white hover:text-black transition">Unlock Access</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-32 pb-16 px-12 bg-black border-t-2 border-gold">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-16 mb-24">
             <div>
-                <h5 class="text-xs font-black uppercase text-gold mb-8">Non-Profit Alignment</h5>
-                <p class="text-xs text-gray-400">Targeting grants from the Lenfest Institute and Department of Education.</p>
+                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Non-Profit Alignment</h5>
+                <p class="text-xs text-gray-400 leading-relaxed mb-6">Aligning with 501(c)(3) entities to scale Cyber-Defense education and Philadelphia urban literacy initiatives.</p>
+                <a href="#" class="text-[8px] font-bold border-b border-gold pb-1 uppercase tracking-widest">Alignment Manifesto</a>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase text-gold mb-8">Live Events</h5>
-                <p class="text-xs text-gray-400">Center City Tech Summit 2026 // Vanguard Gala.</p>
+                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Live Events & Expo</h5>
+                <ul class="text-xs space-y-4 text-gray-600 font-medium">
+                    <li class="hover:text-white transition">/ Center City Tech Summit 2026</li>
+                    <li class="hover:text-white transition">/ Gov-Ops Youth Mentorship Workshop</li>
+                    <li class="hover:text-white transition">/ Makinzine Pro Vanguard Gala</li>
+                </ul>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase text-gold mb-8">Strategic Affiliations</h5>
-                <p class="text-xs text-gray-400">U.S. Dept. of Commerce // PHA // Vexilla AI Labs.</p>
+                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Strategic Affiliations</h5>
+                <ul class="text-xs space-y-4 text-gray-600 font-medium">
+                    <li class="hover:text-white transition">U.S. Department of Commerce</li>
+                    <li class="hover:text-white transition">Philadelphia Housing Authority</li>
+                    <li class="hover:text-white transition">Vexilla AI Labs x Solomon Kin</li>
+                </ul>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase text-gold mb-8">Mission Detail</h5>
-                <p class="text-xs text-gray-400 italic">"Mentoring the community to serve the state."</p>
+                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">The Mission</h5>
+                <p class="text-xs text-gray-500 italic font-light leading-relaxed">"Mentoring the community to serve the state." We transform local youth into federal assets.</p>
             </div>
+        </div>
+        <div class="text-center pt-10 border-t border-white/5 text-[10px] tracking-[1em] opacity-30 font-black">
+            MAKINZINE PRO BY SOLOMON KIN x VEXILLA AITS // PHILADELPHIA 2026
         </div>
     </footer>
 
