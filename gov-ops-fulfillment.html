@@ -6,24 +6,43 @@
     <title>GOV-OPS FULFILLMENT | Makinzine Pro Pipeline</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring Logo scale matches index.html */
+        .logo-main {
+            height: 60px; /* Matched to Index hero scale */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo-main:hover {
+            transform: scale(1.05);
+        }
+        .header-container {
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-[#050505] text-white">
 
     <header>
-        <div class="header-container">
+        <div class="header-container border-b border-white/5">
             <div class="logo-box">
-                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO" style="height: 40px; width: auto;"></a>
+                <a href="index.html">
+                    <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO" class="logo-main">
+                </a>
             </div>
-            <nav>
-                <a href="index.html">Foundation</a>
-                <a href="vanguard-registry.html">Vanguard</a>
-                <span class="text-gold">Gov-Ops</span>
-                <a href="series-a-investor-deck.html">Investors</a>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.3em]">
+                <a href="index.html" class="hover:text-gold transition-colors">Foundation</a>
+                <a href="vanguard-registry.html" class="hover:text-gold transition-colors">Vanguard</a>
+                <span class="text-gold border-b border-gold pb-1">Gov-Ops</span>
+                <a href="series-a-investor-deck.html" class="hover:text-gold transition-colors">Investors</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-12 pt-32">
+    <main class="max-w-7xl mx-auto px-12 pt-24">
         
         <section class="mb-32">
             <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Federal Protocol</span>
@@ -43,8 +62,6 @@
                 <p class="text-gray-400 leading-relaxed mb-8">
                     Every Makinzine Pro in the Gov-Ops pipeline is manufactured and provisioned within a **Vexilla Arena Node**. From the laser-etching of the 3X Logo to the physical installation of the Naked Mode relay, the chain of custody is absolute.
                 </p>
-                
-                
                 
                 <div class="mt-12 space-y-4">
                     <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r-xl">
