@@ -3,187 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVENTS & EXPO | Makinzine Pro Showcase</title>
+    <title>EVENTS & IMPACT | Vexilla Community Gallery</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
+        /* Gallery Grid Logic */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
         }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* 3X LOGO HEADER - UNCHANGED *//**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img {
-            height: 240px; 
-            width: auto;
-            display: block;
-        }
-
-        /* EXHIBIT CARD ANIMATION */
-        .exhibit-card {
-            position: relative;
-            overflow: hidden;
+        .gallery-item {
+            background: #0a0a0a;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
         }
-        .exhibit-card:hover {
+        .gallery-item:hover {
             border-color: var(--gold);
-            transform: translateY(-10px);
+            transform: scale(1.02);
+            z-index: 10;
         }
-        .exhibit-image {
-            filter: grayscale(100%);
-            transition: all 0.8s ease;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            transition: 0.8s ease;
         }
-        .exhibit-card:hover .exhibit-image {
-            filter: grayscale(0%);
-            transform: scale(1.1);
+        .gallery-item:hover img {
+            filter: grayscale(0%) contrast(1);
         }
-
-        /* ELEGANT EVENT LABEL */
-        .event-badge {
+        .item-label {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
+            bottom: 2rem;
+            left: 2rem;
             background: var(--gold);
             color: black;
             padding: 0.5rem 1rem;
-            font-size: 0.6rem;
+            font-size: 9px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
+        /* Bento Box Layout Heights */
+        .h-large { grid-column: span 8; grid-row: span 2; height: 600px; }
+        .h-small { grid-column: span 4; height: 288px; }
     </style>
 </head>
-<body class="antialiased pt-[260px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
                 <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="vanguard-registry.html" class="opacity-50 hover:opacity-100 transition">Registry</a>
-                <span class="text-gold">Events & Expo</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="vanguard-registry.html">Vanguard</a>
+                <span class="text-gold">Events</span>
+                <a href="technical-manifesto.html">Technical</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-12 py-32">
-        <div class="mb-32">
-            <h1 class="serif text-8xl mb-8 italic">The Vanguard <br><span class="text-gold">Circuit.</span></h1>
+    <main class="max-w-7xl mx-auto px-12">
+        
+        <section class="mb-24">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Chronicles of Intent</span>
+            <h1 class="serif text-8xl mb-8 italic">The Vanguard <br><span class="text-white">In Action.</span></h1>
             <p class="text-2xl text-gray-500 font-light max-w-3xl leading-relaxed">
-                Experience the high-impact gatherings where Philadelphia's community meets federal innovation. From black-tie galas to deep-tech workshops.
+                Visual documentation of the Makinzine Pro deployment across Philadelphia’s technical corridors. From the first Squire certification to the 2026 Tech Summit.
             </p>
-        </div>
+        </section>
 
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="gallery-grid mb-40">
             
-            <div class="exhibit-card rounded-[40px] bg-white/5">
-                <div class="h-[500px] overflow-hidden">
-                    <img src="event_gala.jpg" alt="Vanguard Gala" class="exhibit-image w-full h-full object-cover">
-                </div>
-                <div class="event-badge">Q4 2026 // Invitation Only</div>
-                <div class="p-12">
-                    <h3 class="text-3xl font-black mb-4 uppercase italic">The Vanguard Gala</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
-                        Our annual flagship event at the Union League of Philadelphia. A high-prestige evening celebrating the intersection of urban community growth and national security success.
-                    </p>
-                    <a href="#" class="text-gold text-[10px] font-black uppercase tracking-widest border-b border-gold pb-1">Request Formal Invite</a>
-                </div>
+            <div class="gallery-item h-large">
+                
+                <span class="item-label">PHL Tech Summit 2026</span>
             </div>
 
-            <div class="exhibit-card rounded-[40px] bg-white/5">
-                <div class="h-[500px] overflow-hidden">
-                    <img src="event_workshop.jpg" alt="Gov-Ops Workshop" class="exhibit-image w-full h-full object-cover">
-                </div>
-                <div class="event-badge">Monthly // Center City Lab</div>
-                <div class="p-12">
-                    <h3 class="text-3xl font-black mb-4 uppercase italic">Gov-Ops Technical Workshop</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
-                        Hands-on sessions where our mentes parttake in live federal simulation drills. Open to registered Squires and potential government partners.
-                    </p>
-                    <a href="#" class="text-gold text-[10px] font-black uppercase tracking-widest border-b border-gold pb-1">View Schedule</a>
-                </div>
+            <div class="gallery-item h-small">
+                
+                <span class="item-label">Mentorship Lab PHL-01</span>
+            </div>
+
+            <div class="gallery-item h-small">
+                
+                <span class="item-label">Knight Certification Class</span>
+            </div>
+
+            <div class="gallery-item h-small" style="grid-column: span 6;">
+                 
+                <span class="item-label">Infrastructure Expansion</span>
+            </div>
+            
+            <div class="gallery-item h-small" style="grid-column: span 6;">
+                 
+                <span class="item-label">Gov-Ops Signing</span>
             </div>
 
         </div>
 
-        <div class="mt-40 pt-20 border-t border-white/10">
-            <h4 class="text-xs font-black uppercase tracking-[0.5em] text-center text-gray-600 mb-16">Institutional Gallery Partners</h4>
-            <div class="flex flex-wrap justify-center items-center gap-20 opacity-40 grayscale">
-                <span class="text-xl font-bold italic tracking-tighter">THE LENFEST INSTITUTE</span>
-                <span class="text-xl font-bold italic tracking-tighter">U.S. DEPT OF COMMERCE</span>
-                <span class="text-xl font-bold italic tracking-tighter">PHA INNOVATION HUB</span>
-                <span class="text-xl font-bold italic tracking-tighter">VEXILLA ARENA</span>
+        <div class="grid md:grid-cols-4 gap-8 mb-40 border-t border-white/5 pt-20">
+            <div>
+                <h4 class="text-gold font-black text-4xl mb-2">100+</h4>
+                <p class="text-[9px] uppercase tracking-widest text-gray-500">Active Squires</p>
+            </div>
+            <div>
+                <h4 class="text-gold font-black text-4xl mb-2">24</h4>
+                <p class="text-[9px] uppercase tracking-widest text-gray-500">Certified Knights</p>
+            </div>
+            <div>
+                <h4 class="text-gold font-black text-4xl mb-2">$2.4M</h4>
+                <p class="text-[9px] uppercase tracking-widest text-gray-500">Contract Value Fulfilled</p>
+            </div>
+            <div>
+                <h4 class="text-gold font-black text-4xl mb-2">0</h4>
+                <p class="text-[9px] uppercase tracking-widest text-gray-500">Security Breaches</p>
             </div>
         </div>
+
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Makinzine Pro Exhibit Hall // Philadelphia 2026
+            Vexilla Media Archives // Distributed Ledger: Proof of Impact
         </div>
     </footer>
 
 </body>
-
 </html>
