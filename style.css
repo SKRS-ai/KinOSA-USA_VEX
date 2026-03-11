@@ -1,0 +1,94 @@
+/* VEXILLA AITS // GLOBAL BRAND DNA */
+
+:root {
+    --obsidian: #020202;
+    --gold: #d4af37;
+    --glass: rgba(0, 0, 0, 0.85);
+    --border: rgba(212, 175, 55, 0.2);
+}
+
+/* GLOBAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background-color: var(--obsidian); 
+    color: #e5e5e5; 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.serif { font-family: 'Playfair Display', serif; }
+
+/* THE SLIM OVERLAP HEADER ENGINE */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    height: 80px; 
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: -20px; /* The 3x Logo Hang */
+    left: 4rem;
+}
+
+.logo-box img {
+    height: 240px; 
+    width: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.logo-box img:hover {
+    transform: scale(1.02);
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav a {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    opacity: 1;
+    color: var(--gold);
+}
+
+/* TYPOGRAPHY SHARPENING */
+h1 { font-weight: 900; letter-spacing: -0.02em; }
+.text-gold { color: var(--gold); }
+
+/* RESPONSIVE PADDING FOR MAIN CONTENT */
+main {
+    padding-top: 180px; /* Prevents content from hiding under the 240px logo */
+}
