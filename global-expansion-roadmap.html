@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPANSION ROADMAP | Vexilla National Scale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* 3X LOGO HEADER - THE UNCHANGING ANCHOR */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img { height: 240px; width: auto; display: block; }
+
+        /* REGIONAL CARDS */
+        .region-card {
+            background: #080808;
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 3rem;
+            border-radius: 40px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .region-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+        .status-badge {
+            font-size: 0.6rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased pt-[280px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="series-a-investor-deck.html" class="opacity-50 hover:opacity-100 transition">Investor Deck</a>
+                <span class="text-gold">National Expansion</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-12 py-20">
+        
+        <div class="mb-32">
+            <h1 class="serif text-8xl mb-8 italic">National <br><span class="text-gold">Sovereignty.</span></h1>
+            <p class="text-2xl text-gray-500 font-light max-w-4xl leading-relaxed">
+                The Philadelphia Pilot is just the beginning. Vexilla AITS is preparing to deploy the Makinzine Pro ecosystem across the nation’s primary technical corridors, empowering urban youth to fulfill the state's most critical digital needs.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 mb-40">
+            
+            <div class="region-card">
+                <span class="status-badge">Phase I // Operational</span>
+                <h3 class="serif text-4xl mb-4">The Philadelphia Hub</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Our headquarters and primary testing ground. 100+ active units, full integration with the Lenfest Institute, and local Gov-Ops fulfillment active.
+                </p>
+                <div class="flex justify-between items-center pt-6 border-t border-white/5">
+                    <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest">AITS Node: PHL-01</span>
+                    <span class="text-gold font-bold italic">Active</span>
+                </div>
+            </div>
+
+            <div class="region-card opacity-60">
+                <span class="status-badge">Phase II // Q3 2026</span>
+                <h3 class="serif text-4xl mb-4">The DMV Corridor</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Direct expansion into the Washington D.C., Maryland, and Virginia area to facilitate closer proximity to federal contracting officers and national defense mentors.
+                </p>
+                <div class="flex justify-between items-center pt-6 border-t border-white/5">
+                    <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest">AITS Node: DC-02</span>
+                    <span class="text-gray-500 font-bold italic">Staging</span>
+                </div>
+            </div>
+
+            <div class="region-card opacity-40">
+                <span class="status-badge">Phase III // 2027</span>
+                <h3 class="serif text-4xl mb-4">Silicon Valley East</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Activating the Brooklyn/New York tech hub. Focus on high-frequency financial data containers and urban literacy initiatives.
+                </p>
+                <div class="flex justify-between items-center pt-6 border-t border-white/5">
+                    <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest">AITS Node: NYC-03</span>
+                    <span class="text-gray-700 font-bold italic">Planned</span>
+                </div>
+            </div>
+
+            <div class="region-card opacity-40">
+                <span class="status-badge">Phase IV // 2028</span>
+                <h3 class="serif text-4xl mb-4">The Atlanta Nexus</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                    Scaling the Vanguard Registry into the Southeast’s fastest-growing tech corridor. Training the next generation of cybersecurity mentors in GA.
+                </p>
+                <div class="flex justify-between items-center pt-6 border-t border-white/5">
+                    <span class="text-[9px] font-black text-gray-600 uppercase tracking-widest">AITS Node: ATL-04</span>
+                    <span class="text-gray-700 font-bold italic">Planned</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mb-32">
+            
+        </div>
+
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Vexilla National Expansion Office // Scaling the Vision
+        </div>
+    </footer>
+
+</body>
+</html>
