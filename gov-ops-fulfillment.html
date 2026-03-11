@@ -5,215 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOV-OPS FULFILLMENT | Makinzine Pro Pipeline</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-            --gov-blue: #0a192f;
-        }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* HEADER MATCHED TO 3X LOGO/**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-}); (REPLICATED FROM INDEX) */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img {
-            height: 240px; 
-            width: auto;
-            display: block;
-        }
-
-        /* TIMELINE ARCHITECTURE */
-        .timeline-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gold), transparent);
-            transform: translateX(-50%);
-        }
-        .step-card {
-            width: 45%;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        .step-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.05); }
-
-        .step-number {
-            position: absolute;
-            top: 50%;
-            background: var(--gold);
-            color: black;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            transform: translateY(-50%);
-        }
-
-        /* DOT PULSE */
-        .pulse-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--gold);
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: 0 0 15px var(--gold);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            70% { transform: scale(3); opacity: 0; }
-            100% { transform: scale(1); opacity: 0; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased pt-[280px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO" style="height: 40px; width: auto;"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Back to Foundation</a>
-                <span class="text-gold">Operational Fulfillment</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="vanguard-registry.html">Vanguard</a>
+                <span class="text-gold">Gov-Ops</span>
+                <a href="series-a-investor-deck.html">Investors</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-12 pb-32">
-        <div class="mb-24 text-center">
-            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px]">Strategic Asset Pipeline</span>
-            <h1 class="serif text-7xl mt-6">Contract Fulfillment <br><span class="italic text-white">Timeline.</span></h1>
-            <p class="mt-8 text-gray-500 max-w-2xl mx-auto text-lg">
-                Tracking the evolution from community mentorship to federal-grade project execution.
-            </p>
-        </div>
-
-        <div class="timeline-container">
-            <div class="timeline-line"></div>
-
-            <div class="flex justify-start mb-24 w-full">
-                <div class="step-card">
-                    <div class="step-number" style="right: -60px;">01</div>
-                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Vanguard Onboarding</h3>
-                    <h4 class="text-2xl font-bold mb-4">Community Selection</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        We identify high-potential youth within the Philadelphia tech corridor. These candidates enter the **Vexilla Arena** for initial cognitive and technical screening.
-                    </p>
+    <main class="max-w-7xl mx-auto px-12 pt-32">
+        
+        <section class="mb-32">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Federal Protocol</span>
+            <h1 class="serif text-8xl mb-8 italic">The Pipeline <br><span class="text-white">of Trust.</span></h1>
+            
+            <div class="relative mt-12 group">
+                <img src="makinzine_pro_gov_01.jpg" alt="Federal Deployment" class="w-full h-auto rounded-[40px] border border-gold/10 transition-all duration-700 group-hover:border-gold/30">
+                <div class="absolute bottom-10 left-10 bg-black/80 backdrop-blur-md p-6 rounded-2xl border border-white/5">
+                    <p class="text-amber-500 font-mono text-xs uppercase tracking-widest">Active Deployment: NIST/CISA Compliance</p>
                 </div>
             </div>
+        </section>
 
-            <div class="flex justify-end mb-24 w-full">
-                <div class="step-card">
-                    <div class="step-number" style="left: -60px;">02</div>
-                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Systems Architecture</h3>
-                    <h4 class="text-2xl font-bold mb-4">Makinzine Certification</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Mentees undergo intensive training on the **KinOS secure environment**, learning the hardware-to-software logic required for national security data handling.
-                    </p>
+        <div class="grid lg:grid-cols-2 gap-24 mb-40">
+            <div>
+                <h2 class="serif text-4xl mb-6 italic">Secure Chain of Custody</h2>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    Every Makinzine Pro in the Gov-Ops pipeline is manufactured and provisioned within a **Vexilla Arena Node**. From the laser-etching of the 3X Logo to the physical installation of the Naked Mode relay, the chain of custody is absolute.
+                </p>
+                
+                
+                
+                <div class="mt-12 space-y-4">
+                    <div class="p-6 bg-white/5 border-l-2 border-gold rounded-r-xl">
+                        <h4 class="text-white font-bold text-sm">FIPS 140-2 Level 3</h4>
+                        <p class="text-gray-500 text-xs mt-1">Tamper-evident hardware with zero-persistence cloud architecture.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="flex justify-start mb-24 w-full">
-                <div class="step-card">
-                    <div class="step-number" style="right: -60px;">03</div>
-                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Federal Simulation</h3>
-                    <h4 class="text-2xl font-bold mb-4">Dark-Site Execution</h4>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Students fulfill mock contracts designed by former federal officers, verifying their ability to work under high-stress, high-security protocols.
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex justify-end mb-24 w-full">
-                <div class="step-card border-gold bg-gold/5">
-                    <div class="step-number" style="left: -60px;">04</div>
-                    <div class="pulse-dot" style="top: -6px; left: -6px;"></div>
-                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Operational Deployment</h3>
-                    <h4 class="text-2xl font-bold mb-4">Contract Fulfillment</h4>
-                    <p class="text-sm text-gray-200 leading-relaxed">
-                        Certified mentors lead pods to fulfill active **U.S. Department of Commerce** or **Lenfest Institute** contracts, delivering professional-grade results.
-                    </p>
+            
+            <div class="bg-[#0c0c0c] p-12 rounded-[40px] border border-white/5">
+                <h3 class="serif text-3xl mb-8">Fulfillment Metrics</h3>
+                <div class="space-y-8">
+                    <div class="flex justify-between border-b border-white/5 pb-4">
+                        <span class="text-gray-500 uppercase tracking-widest text-[10px]">Production Capacity</span>
+                        <span class="text-white font-mono">1,200 Units / Mo</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/5 pb-4">
+                        <span class="text-gray-500 uppercase tracking-widest text-[10px]">Node Latency</span>
+                        <span class="text-gold font-mono">< 12ms</span>
+                    </div>
+                    <div class="flex justify-between border-b border-white/5 pb-4">
+                        <span class="text-gray-500 uppercase tracking-widest text-[10px]">Vanguard Support</span>
+                        <span class="text-white font-mono">24/7 Red-Team Audit</span>
+                    </div>
                 </div>
             </div>
         </div>
+
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Vexilla Gov-Ops Division // Terminal ID: 00-482-PHL
+            Vexilla Gov-Ops Fulfillment // Division 01
         </div>
     </footer>
 
 </body>
-
 </html>
