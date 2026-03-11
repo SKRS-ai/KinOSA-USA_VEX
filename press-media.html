@@ -3,171 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRESS & MEDIA | Vexilla Daily Newsroom</title>
+    <title>PRESS & MEDIA | Vexilla AITS Newsroom</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-        }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* UNCHANGING 3X /**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});LOGO HEADER ARCHITECTURE */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img { height: 240px; width: auto; display: block; }
-
-        /* PRESS FEED STYLE */
-        .press-article {
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 4rem 0;
-            transition: all 0.4s ease;
-        }
-        .press-article:hover { background: rgba(212, 175, 55, 0.02); }
-
-        .date-stamp {
-            font-family: 'Inter', sans-serif;
-            font-weight: 900;
-            font-size: 0.7rem;
-            color: var(--gold);
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-        }
-
-        /* MEDIA KIT BOX */
-        .kit-download {
-            background: #111;
-            border: 1px solid #222;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased pt-[280px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
                 <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="secure-portal.html" class="opacity-50 hover:opacity-100 transition">Liaison</a>
-                <span class="text-gold">Press & Media</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="vanguard-registry.html">Vanguard</a>
+                <span class="text-gold">Media</span>
+                <a href="series-a-investor-deck.html">Investors</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-12 py-20">
+    <main class="max-w-7xl mx-auto px-12">
         
-        <div class="grid lg:grid-cols-3 gap-24">
-            
-            <div class="lg:col-span-2">
-                <h1 class="serif text-8xl mb-16 italic">Vexilla <br><span class="text-gold">Daily.</span></h1>
-                
-                <div class="press-feed">
-                    <div class="press-article">
-                        <span class="date-stamp">March 11, 2026 // Philadelphia</span>
-                        <h2 class="serif text-4xl mt-4 mb-6 leading-tight">Makinzine Pro Surpasses Phase II Mentorship Milestones in Center City Hub.</h2>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Vexilla AITS officially announces the successful certification of 50 new 'Knights' within the Vanguard Registry, ready for immediate government contract alignment...
-                        </p>
-                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-gold border-b border-gold pb-1">Read Full Release</a>
-                    </div>
+        <section class="mb-32">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Official Newsroom</span>
+            <h1 class="serif text-8xl mb-8 italic">The Vexilla <br><span class="text-white">Narrative.</span></h1>
+            <p class="text-2xl text-gray-500 font-light max-w-4xl leading-relaxed">
+                Official press releases, high-resolution hardware renders, and the Vanguard impact report for journalists and institutional researchers.
+            </p>
+        </section>
 
-                    <div class="press-article">
-                        <span class="date-stamp">February 24, 2026 // Gov-Ops</span>
-                        <h2 class="serif text-4xl mt-4 mb-6 leading-tight">Bridging the Digital Divide: A New Era of Federal Career Pathways for Philly Youth.</h2>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Solomon Kin outlines the 'Naked Mode' philosophy and how hardware isolation creates elite focus for underserved communities...
-                        </p>
-                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-gold border-b border-gold pb-1">Read Full Release</a>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-2 gap-12 mb-40">
+            <div class="p-12 bg-white/5 rounded-3xl border border-white/10 hover:border-gold transition">
+                <h3 class="serif text-3xl mb-4 italic">Hardware Asset Pack</h3>
+                <p class="text-gray-400 text-sm mb-8">4K Renders of the Makinzine Pro, haptic spine schematics, and 'Naked Mode' UI captures.</p>
+                <a href="#" class="text-[10px] font-black uppercase tracking-widest text-gold border-b border-gold pb-1">Download ZIP (142MB)</a>
             </div>
 
-            <div class="space-y-8">
-                <div class="kit-download">
-                    <h3 class="text-xs font-black uppercase tracking-widest mb-6">Series A Media Kit</h3>
-                    <p class="text-xs text-gray-500 mb-8 leading-relaxed">Access high-resolution product photography, technical schematics, and the Vexilla Foundation manifesto.</p>
-                    <button class="w-full bg-white text-black font-black py-4 rounded-xl text-[10px] uppercase tracking-widest hover:bg-gold transition">Download Assets (.ZIP)</button>
-                </div>
+            <div class="p-12 bg-white/5 rounded-3xl border border-white/10 hover:border-gold transition">
+                <h3 class="serif text-3xl mb-4 italic">Vanguard Registry Deck</h3>
+                <p class="text-gray-400 text-sm mb-8">The complete community impact report, Squire-to-Oracle data, and PHL-01 graduation metrics.</p>
+                <a href="#" class="text-[10px] font-black uppercase tracking-widest text-gold border-b border-gold pb-1">Download PDF (18MB)</a>
+            </div>
+        </div>
 
-                <div class="p-8 border border-white/5 rounded-20 bg-black/50">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-gold mb-6">Inquiries</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">For interview requests with Solomon Kin or site visitations at the Vexilla Arena:</p>
-                    <a href="mailto:press@vexilla.pro" class="text-white font-bold text-sm block">press@vexilla.pro</a>
+        <div class="mb-40">
+            <h2 class="serif text-4xl mb-12">Latest <span class="text-gold">Bulletins</span></h2>
+            <div class="space-y-12">
+                <div class="border-b border-white/5 pb-12">
+                    <span class="mono text-xs text-gray-600">MARCH 11, 2026 // PHILADELPHIA, PA</span>
+                    <h4 class="serif text-2xl mt-4 italic hover:text-gold cursor-pointer transition">Vexilla AITS Announces Full FIPS 140-2 Certification for Makinzine Pro Kernel.</h4>
                 </div>
-
-                
+                <div class="border-b border-white/5 pb-12">
+                    <span class="mono text-xs text-gray-600">FEBRUARY 24, 2026 // CENTER CITY LABS</span>
+                    <h4 class="serif text-2xl mt-4 italic hover:text-gold cursor-pointer transition">First Class of Vanguard Oracles Inducted into Philadelphia Tech Council.</h4>
+                </div>
             </div>
         </div>
 
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Vexilla Media Division // Control: Alpha-Record
+            Vexilla Media Relations // PHL-NODE-01
         </div>
     </footer>
 
 </body>
-
 </html>
