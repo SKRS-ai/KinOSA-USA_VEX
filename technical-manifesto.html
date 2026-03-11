@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNICAL MANIFESTO | Makinzine Pro Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+            --terminal-green: #00ff41;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* 3X LOGO HEADER - STAYS RIGIDLY IN PLACE */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img { height: 240px; width: auto; display: block; }
+
+        /* TECHNICAL SCHEMATIC BLOCKS */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .spec-item {
+            background: var(--obsidian);
+            padding: 3rem;
+            transition: background 0.3s ease;
+        }
+        .spec-item:hover { background: #050505; }
+
+        /* CODE BLOCK ELEGANCE */
+        .terminal-block {
+            background: #080808;
+            border-left: 2px solid var(--gold);
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: var(--terminal-green);
+        }
+    </style>
+</head>
+<body class="antialiased pt-[260px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="affiliations-awards.html" class="opacity-50 hover:opacity-100 transition">Affiliations</a>
+                <span class="text-gold">Technical Manifesto</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-12 py-32">
+        <div class="max-w-4xl mb-32">
+            <span class="mono text-gold text-xs tracking-widest uppercase mb-4 block">// PROTOCOL: NAKED_MODE_v1.0</span>
+            <h1 class="serif text-8xl mb-12">The Architecture of <br><span class="text-gold italic">Pure Intent.</span></h1>
+            <p class="text-2xl text-gray-400 font-light leading-relaxed">
+                The Makinzine Pro is not a tablet. It is a **High-Prestige Terminal** engineered to eliminate the "Algorithm Economy." We have stripped away the noise to create a secure, haptic-first environment for the world's most critical data.
+            </p>
+        </div>
+
+        <div class="mb-32">
+            
+        </div>
+
+        <div class="spec-grid mb-40">
+            <div class="spec-item">
+                <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-6">01 / Silicon</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">Vexilla Neural Engine</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">Custom ARM-based architecture optimized for static page rendering and 256-bit hardware-level encryption. Zero background processes for 100% user focus.</p>
+            </div>
+            <div class="spec-item">
+                <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-6">02 / OS Architecture</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">KinOS (Naked Kernel)</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">A proprietary operating system written in Rust. No social APIs, no trackers, no notifications. Only the .kin container and the KinPages Registry.</p>
+            </div>
+            <div class="spec-item">
+                <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-6">03 / Security</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">The .kin Container</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">Every piece of data delivered to a Makinzine Pro is sandboxed in a secure container, ensuring government-grade privacy and untamperable digital records.</p>
+            </div>
+            <div class="spec-item">
+                <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-6">04 / Interaction</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">Sightless Haptics</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">The "Haptic Spine" uses five micro-actuators to provide spatial feedback, allowing elite users to navigate 15-page daily records by touch alone.</p>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-20 items-center bg-[#050505] p-20 rounded-[60px] border border-white/5">
+            <div>
+                <h2 class="serif text-5xl mb-8 italic">Engineered for the <br>Permanent Record.</h2>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Our government contract fulfillment relies on hardware that cannot be compromised. By removing the "Internet of Chaos" and replacing it with the "Architecture of Intent," we provide a stable platform for Philly youth to execute federal tasks.
+                </p>
+                <div class="terminal-block mono">
+                    $ sudo kin-system --activate naked-mode<br>
+                    > System: Vexilla-Core-Alpha-9<br>
+                    > Security: High-Prestige Shield Active<br>
+                    > Tracking: Disabled (Perma-Null)
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Makinzine Pro Technical Manifesto // Revision: 2026.03.11
+        </div>
+    </footer>
+
+</body>
+</html>
