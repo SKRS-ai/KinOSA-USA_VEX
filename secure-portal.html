@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE PORTAL | Makinzine Pro Liaison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+            --alert-red: #ff3b3b;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* UNCHANGING 3X LOGO HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img { height: 240px; width: auto; display: block; }
+
+        /* PORTAL INTERFACE */
+        .portal-frame {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,1) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 40px;
+            padding: 4rem;
+            box-shadow: 0 0 100px rgba(0,0,0,1);
+        }
+
+        .input-field {
+            background: transparent;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            padding: 1.5rem 0;
+            font-size: 1.2rem;
+            color: white;
+            outline: none;
+            transition: border-color 0.4s;
+        }
+
+        .input-field:focus { border-color: var(--gold); }
+
+        /* SCANNER ANIMATION */
+        .scanner-line {
+            height: 2px;
+            background: var(--gold);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            opacity: 0.3;
+            box-shadow: 0 0 15px var(--gold);
+            animation: scan 4s infinite linear;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+    </style>
+</head>
+<body class="antialiased pt-[280px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="technical-manifesto.html" class="opacity-50 hover:opacity-100 transition">Technical</a>
+                <span class="text-gold">Secure Portal</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-12 py-20 relative">
+        
+        <div class="portal-frame relative overflow-hidden">
+            <div class="scanner-line"></div>
+            
+            <div class="mb-16">
+                <span class="text-[10px] font-black uppercase tracking-[0.5em] text-gold mb-4 block">System Status: Encrypted</span>
+                <h1 class="serif text-6xl mb-6">Request <br><span class="italic text-white">Liaison.</span></h1>
+                <p class="text-gray-500 text-sm leading-relaxed uppercase tracking-widest">Authorized Access Only // Direct Line to Vexilla AITS Executive Office</p>
+            </div>
+
+            <form class="space-y-12">
+                <div>
+                    <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Identity / Organization</label>
+                    <input type="text" class="input-field" placeholder="Full Name or Federal ID">
+                </div>
+
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Clearance Level</label>
+                        <select class="input-field bg-black text-sm">
+                            <option>Series A Potential Investor</option>
+                            <option>Government Contracting Officer</option>
+                            <option>Non-Profit Director (Grant Alignment)</option>
+                            <option>Press & Media (Inquiry)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Secure Callback</label>
+                        <input type="email" class="input-field" placeholder="Encrypted Email">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Subject of Inquiry</label>
+                    <textarea class="input-field h-32" placeholder="Detail the nature of your alignment or project..."></textarea>
+                </div>
+
+                <div class="pt-8">
+                    <button class="w-full bg-white text-black font-black py-6 rounded-xl uppercase tracking-[0.4em] text-xs hover:bg-gold transition-all duration-500 group">
+                        Establish Connection <span class="ml-4 group-hover:translate-x-2 inline-block transition">→</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-[9px] text-gray-700 uppercase tracking-[0.2em] max-w-lg mx-auto leading-loose">
+                NOTICE: Communications via this portal are sandboxed within the .kin container environment. By submitting, you agree to the Vexilla Foundation Privacy Protocol and non-disclosure standards.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Makinzine Pro Security Terminal // 2026 Liaison Protocol
+        </div>
+    </footer>
+
+</body>
+</html>
