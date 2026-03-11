@@ -3,195 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVESTOR RELATIONS | Makinzine Pro Series A</title>
+    <title>INVESTOR RELATIONS | Series A Capitalization</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-            --graph-line: #39ff14;
+        /* Investment metric styling */
+        .metric-card {
+            background: linear-gradient(145deg, #0f0f0f 0%, #000 100%);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 3rem;
+            border-radius: 40px;
+            text-align: center;
         }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* 3X LOGO H/**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});EADER - THE UNCHANGING STANDARD */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
+        .financial-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 1.5rem 0;
         }
-
-        .header-container {
+        .financial-row span:first-child { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; }
+        .financial-row span:last-child { color: var(--gold); font-weight: 700; font-family: monospace; }
+        
+        .chart-placeholder {
+            height: 300px;
+            background: repeating-linear-gradient(45deg, #050505, #050505 10px, #080808 10px, #080808 20px);
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img { height: 240px; width: auto; display: block; }
-
-        /* FINANCIAL DATA CARDS */
-        .metric-card {
-            background: #080808;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 2.5rem;
-            border-radius: 24px;
-            transition: all 0.4s;
-        }
-        .metric-card:hover { border-color: var(--gold); background: #0c0c0c; }
-
-        .growth-indicator {
-            color: var(--graph-line);
-            font-family: monospace;
-            font-size: 0.7rem;
-            font-weight: bold;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
     </style>
 </head>
-<body class="antialiased pt-[280px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
                 <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="technical-manifesto.html" class="opacity-50 hover:opacity-100 transition">Technical</a>
-                <span class="text-gold">Investor Deck</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="affiliations-awards.html">Affiliations</a>
+                <span class="text-gold">Investors</span>
+                <a href="global-expansion-roadmap.html">Expansion</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-12 py-20">
+    <main class="max-w-7xl mx-auto px-12">
         
-        <div class="mb-32">
-            <span class="text-[10px] font-black uppercase tracking-[0.6em] text-gold mb-6 block">Confidential // Series A Offering</span>
-            <h1 class="serif text-8xl mb-8 italic">Scaling <br><span class="text-white">National Impact.</span></h1>
-            <p class="text-2xl text-gray-500 font-light leading-relaxed max-w-3xl">
-                Vexilla AITS is bridging the gap between urban community talent and the $700B+ Federal Contract market. Makinzine Pro is the hardware gateway.
+        <section class="mb-32">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Capitalization Round: Series A</span>
+            <h1 class="serif text-8xl mb-8 italic">The Business <br><span class="text-white">of Sovereignty.</span></h1>
+            <p class="text-2xl text-gray-500 font-light max-w-4xl leading-relaxed">
+                Vexilla AITS is seeking $15M in Series A funding to scale the Makinzine Pro production line and expand the Vanguard Registry to three new Tier-1 federal tech corridors by 2027.
             </p>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-40">
+            <div class="metric-card">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-6">Current Valuation</h4>
+                <p class="serif text-6xl text-white italic">$42.5M</p>
+                <p class="text-[10px] text-gold mt-4 font-bold">Post-Seed / Pre-Series A</p>
+            </div>
+            <div class="metric-card">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-6">Contract Pipeline</h4>
+                <p class="serif text-6xl text-white italic">$12.8M</p>
+                <p class="text-[10px] text-gold mt-4 font-bold">Signed Gov-Ops LOIs</p>
+            </div>
+            <div class="metric-card">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-6">Unit Margin</h4>
+                <p class="serif text-6xl text-white italic">68%</p>
+                <p class="text-[10px] text-gold mt-4 font-bold">Proprietary Haptic Stack</p>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-32">
-            <div class="metric-card">
-                <span class="text-[9px] font-black uppercase text-gray-500 tracking-widest">Target Raise</span>
-                <div class="text-5xl font-black mt-4 mb-2">$15M</div>
-                <div class="growth-indicator">Series A Equity</div>
-            </div>
-            <div class="metric-card">
-                <span class="text-[9px] font-black uppercase text-gray-500 tracking-widest">Market Size (SAM)</span>
-                <div class="text-5xl font-black mt-4 mb-2">$2.4B</div>
-                <div class="growth-indicator">Secure Hardware Sector</div>
-            </div>
-            <div class="metric-card">
-                <span class="text-[9px] font-black uppercase text-gray-500 tracking-widest">Pipeline Value</span>
-                <div class="text-5xl font-black mt-4 mb-2">$8.2M</div>
-                <div class="growth-indicator">Pending Gov-Contracts</div>
-            </div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-20 items-start">
-            <div class="sticky top-64">
-                <h2 class="serif text-5xl mb-12 italic">The "Guild" <br>Business Model.</h2>
-                <div class="space-y-12">
-                    <div class="flex gap-8">
-                        <div class="text-gold font-black italic text-2xl">01</div>
-                        <div>
-                            <h4 class="font-black uppercase text-xs tracking-widest mb-2">Hardware Sales</h4>
-                            <p class="text-sm text-gray-400">Direct sales to Gov-Ops agencies and non-profit institutions for secure data interaction.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8">
-                        <div class="text-gold font-black italic text-2xl">02</div>
-                        <div>
-                            <h4 class="font-black uppercase text-xs tracking-widest mb-2">Mentorship SaaS</h4>
-                            <p class="text-sm text-gray-400">Subscription-based access to the KinOS curriculum and the Vanguard Registry pipeline.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8">
-                        <div class="text-gold font-black italic text-2xl">03</div>
-                        <div>
-                            <h4 class="font-black uppercase text-xs tracking-widest mb-2">Contract Overhead</h4>
-                            <p class="text-sm text-gray-400">Vexilla AITS retains a percentage of federal contracts fulfilled by our certified youth pods.</p>
-                        </div>
-                    </div>
+        <div class="grid lg:grid-cols-2 gap-24 mb-40">
+            <div>
+                <h2 class="serif text-5xl mb-8 italic">Market Thesis</h2>
+                <p class="text-gray-400 mb-12 leading-relaxed text-lg">
+                    The public cloud has become a national security liability. The demand for "Naked Mode" hardware—devices that process high-value data in physical isolation—is projected to grow by 400% in the defense and financial sectors by 2028. Vexilla AITS is the only provider combining this security with a scalable, urban-centric workforce.
+                </p>
+                
+                <div class="space-y-2">
+                    <div class="financial-row"><span>R&D Expenditure</span><span>$3.2M</span></div>
+                    <div class="financial-row"><span>IP Portfolio Value</span><span>$8.5M</span></div>
+                    <div class="financial-row"><span>Gov-Ops Capacity</span><span>450 Nodes</span></div>
                 </div>
             </div>
             
-            <div class="bg-white/5 p-16 rounded-[60px] border border-white/10">
-                <h3 class="serif text-4xl mb-8">Roadmap 2026</h3>
-                <ul class="space-y-10">
-                    <li class="border-b border-white/5 pb-6">
-                        <span class="text-gold font-bold text-[10px] block mb-2 uppercase tracking-widest">Q1 - Q2</span>
-                        <span class="text-white font-bold block mb-1">Center City Hub Launch</span>
-                        <p class="text-xs text-gray-500 leading-relaxed">Activation of 100 Makinzine Pro units and first federal simulation trials.</p>
-                    </li>
-                    <li class="border-b border-white/5 pb-6">
-                        <span class="text-gold font-bold text-[10px] block mb-2 uppercase tracking-widest">Q3 - Q4</span>
-                        <span class="text-white font-bold block mb-1">Series A Close & Scale</span>
-                        <p class="text-xs text-gray-500 leading-relaxed">Expansion of the Vanguard Registry to North and West Philadelphia hubs.</p>
-                    </li>
-                    <li class="pb-6">
-                        <span class="text-gold font-bold text-[10px] block mb-2 uppercase tracking-widest">2027 Perspective</span>
-                        <span class="text-white font-bold block mb-1">National Security Expansion</span>
-                        <p class="text-xs text-gray-500 leading-relaxed">Replicating the Philly model in three major U.S. tech corridors.</p>
-                    </li>
-                </ul>
+            <div>
+                <h3 class="text-gold font-black text-[10px] uppercase tracking-widest mb-6">Revenue Projections: 2026–2028</h3>
+                
+                <div class="chart-placeholder">
+                    <p class="text-[10px] font-black uppercase tracking-[1em] text-gray-700">Projected Data Feed</p>
+                </div>
             </div>
         </div>
+
+        <div class="bg-gold p-20 rounded-[60px] text-black text-center mb-40">
+            <h2 class="serif text-5xl mb-6">Access the <span class="italic">Data Room.</span></h2>
+            <p class="font-bold uppercase tracking-widest text-[10px] mb-12 opacity-70">Strictly for Institutional & Accredited Partners</p>
+            <a href="secure-portal.html" class="inline-block bg-black text-white font-black py-6 px-12 rounded-full uppercase tracking-[0.4em] text-[10px] hover:bg-zinc-800 transition">Request Full Offering Memo</a>
+        </div>
+
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Vexilla AITS Investor Relations // Private Tier 1 Access
+            Vexilla Capital Management // Financial Disclosure Alpha
         </div>
     </footer>
 
 </body>
-
 </html>
