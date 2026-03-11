@@ -3,224 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinOSA-USA_VEX | Makinzine Pro OS</title>
+    <title>Makinzine Pro | The Permanent Record</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
+
         :root {
-            --vexilla-blue: #0047FF;
-            --kin-gold: #D4AF37;
-            --bg-obsidian: #020202;
-            --glass: rgba(255, 255, 255, 0.04);
-            --border: rgba(255, 255, 255, 0.1);
-            --font-main: 'Inter', system-ui, sans-serif;
-            --font-serif: 'Didot', 'Playfair Display', serif;
+            --obsidian: #1a1a1a;
+            --cream: #f9f7f2;
+            --vexilla-gold: #c5a059;
+            --haptic-blue: #00f2ff;
         }
 
-        /* 1. KINOS FOUNDATION */
-        * { box-sizing: border-box; cursor: crosshair; }
-        body, html {
-            margin: 0; padding: 0;
-            background-color: var(--bg-obsidian);
-            color: #fff;
-            font-family: var(--font-main);
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
+        body {
+            background-color: var(--cream);
+            color: var(--obsidian);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* 2. THE SHRINE EFFECT (GLOSS OVERLAY) */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(125deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%);
-            pointer-events: none;
-            z-index: 999;
+        h1, h2, .serif {
+            font-family: 'Playfair Display', serif;
         }
 
-        section {
-            height: 100vh;
-            width: 100vw;
-            scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            position: relative;
+        .device-frame {
+            border: 12px solid var(--obsidian);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: white;
+            overflow: hidden;
+            transition: transform 0.5s ease;
         }
 
-        /* 3. TYPOGRAPHY & BRANDING */
-        .masthead h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(4rem, 12vw, 10rem);
-            letter-spacing: -2px;
-            margin: 0;
-            line-height: 0.8;
+        .haptic-glow:hover {
+            box-shadow: 0 0 20px var(--haptic-blue);
+            border-color: var(--haptic-blue);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-counter {
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-        }
-
-        .os-badge {
-            background: var(--vexilla-blue);
-            color: white;
-            padding: 5px 15px;
             font-size: 0.7rem;
-            letter-spacing: 3px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            color: #888;
         }
 
-        /* 4. KINSHIP SUBSCRIPTION TIERS (GLASS CARDS) */
-        .tier-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            width: 100%;
+        /* Hero Image Placement */
+        .hero-bg {
+            background-image: linear-gradient(rgba(26,26,26,0.1), rgba(26,26,26,0.1)), url('https://your-image-link-here.com/hero.jpg');
+            background-size: cover;
+            background-position: center;
         }
-
-        .tier-card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            backdrop-filter: blur(15px);
-            padding: 40px 20px;
-            text-align: left;
-            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .tier-card:hover {
-            border-color: var(--kin-gold);
-            background: rgba(212, 175, 55, 0.05);
-            transform: translateY(-10px);
-        }
-
-        .tier-number { font-family: var(--font-serif); color: var(--kin-gold); font-size: 2rem; }
-        .tier-price { font-size: 1.5rem; font-weight: bold; margin: 10px 0; }
-
-        /* 5. KINPAGES QUICK-SEARCH REGISTRY */
-        .registry-hub {
-            width: 100%;
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .search-field {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 2px solid var(--border);
-            color: var(--kin-gold);
-            font-size: 2rem;
-            padding: 20px;
-            font-family: var(--font-serif);
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-field:focus { border-bottom-color: var(--vexilla-blue); }
-
-        /* 6. BENTO GRANT PARTNERS */
-        .bento {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .bento-item {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 20px;
-            min-height: 150px;
-        }
-
-        .bento-item.featured { grid-column: span 2; background: var(--vexilla-blue); }
-
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <section>
-        <div class="os-badge">KINOS v1.0 | BY VEXILLAAITS</div>
-        <div class="masthead">
-            <h1>MAKIN<br><span style="color: var(--kin-gold);">ZINE</span></h1>
-        </div>
-        <p style="margin-top: 30px; letter-spacing: 5px; opacity: 0.6;">THE 15-INCH EDITORIAL SHRINE</p>
-    </section>
-
-    <section>
-        <h2 style="font-family: var(--font-serif); margin-bottom: 40px; font-size: 3rem;">The Arena Tiers</h2>
-        <div class="tier-grid">
-            <div class="tier-card" role="button" aria-label="Tier 1 Scout">
-                <div class="tier-number">01</div>
-                <h3>SCOUT</h3>
-                <div class="tier-price">$10 <small>/mo</small></div>
-                <p>Support Digital Literacy & Regional News</p>
-            </div>
-            <div class="tier-card" role="button" aria-label="Tier 2 Elite">
-                <div class="tier-number">02</div>
-                <h3>ELITE</h3>
-                <div class="tier-price">$50 <small>/mo</small></div>
-                <p>Competitive Rankings & .KIN Access</p>
-            </div>
-            <div class="tier-card" role="button" aria-label="Tier 3 Vanguard">
-                <div class="tier-number">03</div>
-                <h3>VANGUARD</h3>
-                <div class="tier-price">$150 <small>/mo</small></div>
-                <p>Abuse Prevention & VIP Event Seating</p>
-            </div>
-            <div class="tier-card highlight" role="button" aria-label="Tier 4 Legend">
-                <div class="tier-number">04</div>
-                <h3>LEGEND</h3>
-                <div class="tier-price">$500 <small>/mo</small></div>
-                <p>Hardware Priority & SK Board Voting</p>
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter obsidian">VEXILLA<span class="text-gray-400">AITS</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#hardware" class="hover:text-amber-600 transition">Hardware</a>
+                <a href="#kinos" class="hover:text-amber-600 transition">KinOS</a>
+                <a href="#sightless" class="hover:text-amber-600 transition">Accessibility</a>
+                <a href="#invest" class="bg-black text-white px-4 py-2 rounded-full">Investor Portal</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section>
-        <div class="registry-hub">
-            <h2 style="letter-spacing: 10px; font-size: 0.8rem; margin-bottom: 20px;">KINPAGES DIRECTORY</h2>
-            <input type="text" class="search-field" placeholder="Search Philadelphia Businesses...">
-            <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
-                <span style="color: var(--kin-gold);">[ 2.4M PUBLIC FILES ]</span>
-                <span style="color: var(--vexilla-blue);">[ 185k VERIFIED OWNERS ]</span>
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-sm">Now Entering Naked Mode</span>
+                <h1 class="text-6xl mt-4 leading-tight">The 15-Inch <br>Permanent Record.</h1>
+                <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+                    Designed in Philadelphia. Engineered for depth. The Makinzine Pro is the world's first high-prestige digital broadsheet, returning intent to your daily ritual.
+                </p>
+                <div class="mt-10 flex space-x-4">
+                    <button class="bg-black text-white px-8 py-4 rounded-sm font-bold hover:bg-gray-800 transition">Pre-Order Vanguard Edition</button>
+                    <button class="border border-black px-8 py-4 rounded-sm font-bold hover:bg-black hover:text-white transition">View Technical Specs</button>
+                </div>
+            </div>
+            
+            <div class="device-frame haptic-glow">
+                <img src="https://via.placeholder.com/800x1000?text=VEXILLA+DAILY+NAKED+MODE" alt="Makinzine Pro Front View" class="w-full">
+                <div class="p-4 bg-white flex justify-between items-center">
+                    <span class="page-counter">Page 01 of 15</span>
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                        <div class="w-3 h-3 rounded-full bg-black"></div>
+                        <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2 style="font-family: var(--font-serif); margin-bottom: 30px;">Grant Alignment Ecosystem</h2>
-        <div class="bento">
-            <div class="bento-item featured">
-                <h3>THE LENFEST INSTITUTE</h3>
-                <p><strong>Alignment:</strong> Journalistic Integrity & Tech Innovation.</p>
-                <p>Award potential: $200,000</p>
-            </div>
-            <div class="bento-item">
-                <h3>BEN FRANKLIN TECH</h3>
-                <p>Early-stage hardware R&D funding for Philly innovators.</p>
-            </div>
-            <div class="bento-item">
-                <h3>KNIGHT FOUNDATION</h3>
-                <p>Supporting informed communities via KinOS media.</p>
-            </div>
-            <div class="bento-item">
-                <h3>CYBERSMILE</h3>
-                <p>Electronic Abuse Prevention and digital wellness.</p>
+    <section id="hardware" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl text-center mb-16">Hardware Reimagined.</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group">
+                    <div class="bg-gray-100 p-8 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x500?text=HAPTIC+SPINE+CLOSEUP" alt="Haptic Spine" class="group-hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-xl">The Leather Haptic Spine</h3>
+                    <p class="text-gray-500 mt-2">Hand-stitched vegetable-tanned leather embedded with 5 Linear Resonant Actuators for tactile page turning.</p>
+                </div>
+
+                <div class="group">
+                    <div class="bg-gray-100 p-8 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x500?text=SIGHTLESS+NAV+INTERFACE" alt="Sightless Navigation" class="group-hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-xl">Sightless Navigation</h3>
+                    <p class="text-gray-500 mt-2">A Tri-Modal feedback loop allowing for full navigation without the need for visual confirmation.</p>
+                </div>
+
+                <div class="group">
+                    <div class="bg-gray-100 p-8 rounded-xl mb-4 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x500?text=INTERNAL+CHASSIS+MAP" alt="Internal Chassis" class="group-hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-xl">Obsidian Architecture</h3>
+                    <p class="text-gray-500 mt-2">Aerospace-grade aluminum frame housing the OLED-Ink Hybrid display and biometric vault.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <script>
-        // Placeholder for Vexilla-Haptic Interaction
-        document.querySelectorAll('.tier-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                // Trigger Hardware Haptic Signal here
-                console.log("Vexilla-Haptic: High-Frequency Pulse");
-            });
-        });
-    </script>
+    <section class="py-20 bg-stone-100 border-y border-stone-200">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-5xl mb-6 italic">"The 15-Page Standard"</h2>
+            <p class="text-2xl text-stone-600 serif leading-relaxed">
+                We believe in completion. By standardizing the Vexilla Daily to a 15-page ritual, we provide the psychological satisfaction of finishing the news, free from the exhaustion of the infinite scroll.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black text-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <div class="text-2xl font-bold tracking-tighter">SOLOMON KIN <span class="text-vexilla-gold">x</span> VEXILLA</div>
+                <p class="text-gray-500 text-sm mt-2">© 2026 Philadelphia Adaptive Tech Hub. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6 text-sm uppercase tracking-widest font-semibold">
+                <a href="#" class="hover:text-vexilla-gold">Press Kit</a>
+                <a href="#" class="hover:text-vexilla-gold">B2B Directory</a>
+                <a href="#" class="hover:text-vexilla-gold">Privacy (.kin)</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
