@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAKINZINE PRO | Vexilla Foundation & Gov-Ops</title>
+    <title>MAKINZINE PRO | Vexilla Foundation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
@@ -12,165 +12,134 @@
             --obsidian: #020202;
             --gold: #d4af37;
             --xp-green: #39ff14;
-            --gov-blue: #003366;
         }
 
         body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* HEADER ARCHITECTURE: NO OVERLAP */
+        /* ULTRA-SLIM HEADER ARCHITECTURE */
         header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            padding: 2rem 3rem;
+            padding: 0.5rem 2rem; /* Reduced padding for slim look */
         }
 
-        /* LOGO: INCREASED BY 5X */
-        .brand-logo {
-            font-size: 5rem; /* 5x increase */
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.05em;
-            line-height: 1;
-            color: #fff;
-            margin-bottom: 1rem;
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        .brand-logo span { color: var(--gold); font-style: italic; }
+        /* LOGO SCALING */
+        .logo-box img {
+            height: 80px; /* Large enough to be seen clearly */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo-box img:hover {
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            transform: scale(1.05);
+        }
 
-        /* NAVIGATION: ISOLATED & STABILIZED */
+        /* NAVIGATION: CENTERED & SLIM */
         .nav-center {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
-            padding: 1rem 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.7rem;
+            gap: 2.5rem;
+            font-size: 0.65rem;
             font-weight: 900;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.6);
         }
+        .nav-center a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
         .nav-center a:hover { color: var(--gold); }
 
-        /* GAMIFIED DONATION: THE KINETIC CORE */
+        /* GAMIFIED CARDS STYLE (MAINTAINED) */
         .quest-card {
             background: linear-gradient(145deg, #111, #050505);
             border: 2px solid #222;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .quest-card:hover { border-color: var(--xp-green); transform: scale(1.02); }
-        .xp-bar { height: 4px; background: #333; width: 100%; border-radius: 2px; overflow: hidden; }
-        .xp-fill { height: 100%; background: var(--xp-green); width: 65%; box-shadow: 0 0 10px var(--xp-green); }
-
-        /* FOOTER FOUNDATION */
-        footer { border-top: 2px solid var(--gold); background: #050505; }
+        .xp-bar { height: 4px; background: #333; width: 100%; border-radius: 2px; }
+        .xp-fill { height: 100%; background: var(--xp-green); box-shadow: 0 0 10px var(--xp-green); }
     </style>
 </head>
-<body class="antialiased">
-
-    <header>
-        <div class="max-w-[1600px] mx-auto">
-            <div class="brand-logo">MAKINZINE <span>PRO</span></div>
+<body class="antialiased pt-24"> <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO">
+            </div>
             
             <nav class="nav-center">
-                <a href="#foundation">The Foundation</a>
+                <a href="#foundation">Foundation</a>
                 <a href="#gov-ops">Gov-Ops</a>
-                <a href="#events">Live Events</a>
+                <a href="#events">Events</a>
                 <a href="#mentorship">Mentorship</a>
                 <a href="#affiliations">Affiliations</a>
             </nav>
+
+            <div class="hidden lg:block">
+                <button class="bg-white text-black text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-tighter">Series A Access</button>
+            </div>
         </div>
     </header>
 
-    <section class="py-32 px-12 max-w-7xl mx-auto">
+    <section class="py-20 px-12 max-w-7xl mx-auto">
+        <h2 class="serif text-7xl mb-8">Empowering the <br><span class="text-gold">Next-Gen Elite.</span></h2>
         <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="serif text-7xl mb-8">Empowering the <br><span class="text-gold">Next-Gen Elite.</span></h2>
-                <p class="text-xl text-gray-400 leading-relaxed mb-10">
-                    We bridge the gap between Philadelphia's underserved communities and the United States Government. Through the Makinzine Pro initiative, we mentor youth to fulfill high-level contracts, turning community potential into national security excellence.
-                </p>
-                <div class="flex items-center space-x-4 p-4 bg-blue-900/20 border border-blue-800 rounded-lg">
-                    <span class="text-2xl">🇺🇸</span>
-                    <span class="text-xs font-bold tracking-widest">CERTIFIED GOV-CONTRACT PARTNER | SYSTEM ID: VEX-2026</span>
-                </div>
-            </div>
-            <div class="relative">
-                
-                <img src="hero_front.jpg" alt="Makinzine Pro" class="rounded-3xl shadow-2xl border-4 border-white/5">
-            </div>
+            <p class="text-xl text-gray-400 leading-relaxed">
+                Mentoring community youth to fulfill U.S. Government contracts. We align with the Department of Education and the Lenfest Institute to turn potential into national security excellence.
+            </p>
+            <img src="hero_front.jpg" alt="Makinzine Pro" class="rounded-3xl border-4 border-white/5 shadow-2xl">
         </div>
     </section>
 
     <section class="py-24 px-12 bg-[#080808]">
-        <div class="max-w-7xl mx-auto text-center mb-16">
-            <h3 class="serif text-5xl italic mb-4">Level Up Your Impact</h3>
-            <p class="text-gray-500 uppercase tracking-widest text-[10px]">The Kinetic Core Subscription Engine</p>
-        </div>
-        
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="quest-card p-10 rounded-3xl relative overflow-hidden">
-                <div class="absolute top-4 right-6 text-xs font-bold text-gray-700">LVL 1</div>
+            <div class="quest-card p-10 rounded-3xl">
                 <h4 class="text-2xl font-bold mb-2">Squire Rank</h4>
-                <p class="text-gray-500 text-sm mb-6">Support one student's technical mentorship for a month.</p>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 30%;"></div></div>
+                <div class="xp-bar my-4"><div class="xp-fill" style="width: 30%;"></div></div>
                 <div class="text-3xl font-black mb-6">$25<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-xp-green transition uppercase text-xs">Start Quest</button>
+                <button class="w-full bg-white text-black font-bold py-3 rounded-xl uppercase text-xs">Start Quest</button>
             </div>
-            <div class="quest-card p-10 rounded-3xl border-gold/50 relative">
-                <div class="absolute top-4 right-6 text-xs font-bold text-gold">LVL 50</div>
+            <div class="quest-card p-10 rounded-3xl border-gold/50">
                 <h4 class="text-2xl font-bold mb-2 text-gold">Vanguard Knight</h4>
-                <p class="text-gray-400 text-sm mb-6">Fully fund a Gov-Contract training simulation for a community pod.</p>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 75%;"></div></div>
+                <div class="xp-bar my-4"><div class="xp-fill" style="width: 75%;"></div></div>
                 <div class="text-3xl font-black mb-6">$150<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full bg-gold text-black font-bold py-3 rounded-xl hover:shadow-[0_0_20px_#d4af37] transition uppercase text-xs">Ascend Now</button>
+                <button class="w-full bg-gold text-black font-bold py-3 rounded-xl uppercase text-xs">Ascend Now</button>
             </div>
-            <div class="quest-card p-10 rounded-3xl relative overflow-hidden">
-                <div class="absolute top-4 right-6 text-xs font-bold text-blue-500">MAX LVL</div>
+            <div class="quest-card p-10 rounded-3xl">
                 <h4 class="text-2xl font-bold mb-2">Oracle Founder</h4>
-                <p class="text-gray-500 text-sm mb-6">Directly influence foundation policy and event scheduling.</p>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 100%;"></div></div>
+                <div class="xp-bar my-4"><div class="xp-fill" style="width: 100%;"></div></div>
                 <div class="text-3xl font-black mb-6">$500<span class="text-xs text-gray-500">/MO</span></div>
-                <button class="w-full border border-white text-white font-bold py-3 rounded-xl hover:bg-white hover:text-black transition uppercase text-xs">Unlock God Mode</button>
+                <button class="w-full border border-white text-white font-bold py-3 rounded-xl uppercase text-xs">Unlock God Mode</button>
             </div>
         </div>
     </section>
 
-    <footer class="pt-24 pb-12 px-12">
+    <footer class="pt-24 pb-12 px-12 bg-black border-t-2 border-gold">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-16 mb-20">
             <div>
-                <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-8">Non-Profit Alignment</h5>
-                <p class="text-xs text-gray-400 leading-relaxed mb-6">
-                    We seek partnerships with 501(c)(3) organizations focused on **Cyber-Defense Education** and **Urban Literacy**. We align with grants from the **Lenfest Institute** and **Department of Education** to scale our impact.
-                </p>
-                <a href="#" class="text-[10px] font-bold border-b border-gold pb-1 hover:text-gold transition">View Alignment Manifesto</a>
+                <h5 class="text-xs font-black uppercase text-gold mb-8">Non-Profit Alignment</h5>
+                <p class="text-xs text-gray-400">Targeting grants from the Lenfest Institute and Department of Education.</p>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-8">Live Events & Expo</h5>
-                <ul class="text-xs space-y-4 text-gray-500">
-                    <li class="hover:text-white cursor-pointer">/ Center City Tech Summit 2026</li>
-                    <li class="hover:text-white cursor-pointer">/ Gov-Ops Youth Mentorship Workshop</li>
-                    <li class="hover:text-white cursor-pointer">/ Makinzine Pro Vanguard Gala</li>
-                </ul>
+                <h5 class="text-xs font-black uppercase text-gold mb-8">Live Events</h5>
+                <p class="text-xs text-gray-400">Center City Tech Summit 2026 // Vanguard Gala.</p>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-8">Strategic Affiliations</h5>
-                <ul class="text-xs space-y-4 text-gray-500">
-                    <li class="hover:text-white cursor-pointer">United States Dept. of Commerce</li>
-                    <li class="hover:text-white cursor-pointer">Philadelphia Housing Authority</li>
-                    <li class="hover:text-white cursor-pointer">Vexilla AI Labs</li>
-                </ul>
+                <h5 class="text-xs font-black uppercase text-gold mb-8">Strategic Affiliations</h5>
+                <p class="text-xs text-gray-400">U.S. Dept. of Commerce // PHA // Vexilla AI Labs.</p>
             </div>
             <div>
-                <h5 class="text-xs font-black uppercase tracking-[0.3em] text-gold mb-8">The Mission</h5>
-                <p class="text-xs text-gray-400 italic">
-                    "Mentoring the community to serve the state." We fulfill federal requirements while building local wealth. 
-                </p>
+                <h5 class="text-xs font-black uppercase text-gold mb-8">Mission Detail</h5>
+                <p class="text-xs text-gray-400 italic">"Mentoring the community to serve the state."</p>
             </div>
-        </div>
-        <div class="text-center pt-10 border-t border-white/5 text-[10px] tracking-[0.6em] opacity-30">
-            MAKINZINE PRO BY SOLOMON KIN x VEXILLA AITS // PHILADELPHIA 2026
         </div>
     </footer>
 
