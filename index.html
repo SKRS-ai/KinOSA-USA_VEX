@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<a href="gov-ops-fulfillment.html">Gov-Ops</a>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAKINZINE PRO | Vexilla Foundation</title>
+    <title>MAKINZINE PRO | Vexilla AITS Foundation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
@@ -12,238 +11,107 @@
         :root {
             --obsidian: #020202;
             --gold: #d4af37;
-            --xp-green: #39ff14;
         }
 
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* HEADER MATCHED TO LOGO /**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});SIZE - NO WASTED SPACE */
+        /* THE SLIM HEADER FIX */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            /* Tight padding to match logo height exactly */
-            padding: 0.2rem 2rem; 
+            /* Shortened vertical height of the bar itself */
+            height: 80px; 
+            display: flex;
+            align-items: center;
         }
 
         .header-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
             max-width: 1800px;
             margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
         }
 
-        /* 3X LOGO WITH NEURAL PULSE EFFECT */
+        /* LOGO: Maintains 240px size but overlaps the slim header */
+        .logo-box {
+            position: absolute;
+            top: -20px; /* Pulls it up so it centers despite the slim bar */
+            left: 4rem;
+        }
+
         .logo-box img {
             height: 240px; 
             width: auto;
             display: block;
-            transition: all 0.5s ease;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
-        }
-        
-        .logo-box:hover img {
-            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
-            transform: scale(1.03);
         }
 
-        /* LIQUID GOLD NAVIGATION */
-        .nav-center {
+        /* NAVIGATION: Pushed to the right to clear the logo space */
+        nav {
+            margin-left: auto;
             display: flex;
             gap: 3rem;
-            font-size: 0.7rem;
+        }
+
+        nav a, nav span {
+            font-size: 10px;
             font-weight: 900;
-            letter-spacing: 0.4em;
             text-transform: uppercase;
+            letter-spacing: 0.4em;
+            text-decoration: none;
         }
-        .nav-center a { 
-            color: rgba(255,255,255,0.4); 
-            position: relative;
-            transition: all 0.3s;
-        }
-        .nav-center a:hover { 
-            color: var(--gold);
-            text-shadow: 0 0 10px var(--gold);
-        }
-        .nav-center a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-        .nav-center a:hover::after { width: 100%; }
 
-        /* GAMIFIED MISSION SECTIONS (STYLE LOCKED) */
-        .quest-card {
-            background: linear-gradient(165deg, #0f0f0f 0%, #020202 100%);
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .xp-bar { height: 4px; background: #1a1a1a; width: 100%; border-radius: 2px; }
-        .xp-fill { height: 100%; background: var(--xp-green); box-shadow: 0 0 15px var(--xp-green); }
-
-        /* ELEGANCE ANIMATION */
-        @keyframes subtleGlow {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-            100% { opacity: 0.3; }
-        }
-        .glow-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.15), transparent);
-            pointer-events: none;
-            animation: subtleGlow 8s infinite ease-in-out;
+        /* HERO SECTION ADJUSTMENT */
+        .hero-section {
+            padding-top: 180px; /* Reduced since header is slimmer */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     </style>
 </head>
-<body class="antialiased pt-[260px]"> <div class="glow-overlay"></div>
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO">
+                <a href="index.html">
+                    <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO">
+                </a>
             </div>
-            
-            <nav class="nav-center">
-                <a href="#foundation">Foundation</a>
-                <a href="#gov-ops">Gov-Ops</a>
-                <a href="#events">Events</a>
-                <a href="#mentorship">Mentorship</a>
-                <a href="#affiliations">Affiliations</a>
+            <nav>
+                <span class="text-gold">Foundation</span>
+                <a href="gov-ops-fulfillment.html" class="opacity-50 hover:opacity-100 transition text-white">Gov-Ops</a>
+                <a href="series-a-investor-deck.html" class="opacity-50 hover:opacity-100 transition text-white">Investors</a>
+                <a href="secure-portal.html" class="opacity-50 hover:opacity-100 transition text-white">Liaison</a>
             </nav>
-
-            <div class="hidden xl:block">
-                <div class="flex items-center gap-4">
-                    <div class="h-1 w-12 bg-gold/20 rounded-full overflow-hidden">
-                        <div class="h-full bg-gold w-3/4"></div>
-                    </div>
-                    <span class="text-[9px] font-black uppercase tracking-[0.3em] text-gold/80">Vanguard Phase II</span>
-                </div>
-            </div>
         </div>
     </header>
 
-    <section id="foundation" class="py-32 px-12 max-w-7xl mx-auto">
-        <h2 class="serif text-8xl mb-12">Empowering the <br><span class="text-gold italic">Next-Gen Elite.</span></h2>
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <p class="text-2xl text-gray-400 font-light leading-relaxed">
-                Mentoring community youth to fulfill high-stakes <span class="text-white font-bold">U.S. Government contracts</span>. Through Vexilla Foundation, we align with the Department of Education and the Lenfest Institute to turn raw local potential into national security excellence.
-            </p>
-            <div class="relative group">
-                <img src="hero_front.jpg" alt="Makinzine Pro" class="rounded-[40px] border border-white/10 shadow-2xl transition duration-700 group-hover:border-gold/30">
-                <div class="absolute -bottom-6 -right-6 bg-gold text-black px-8 py-6 font-black text-sm uppercase tracking-widest shadow-2xl">
-                    Gov-Certified 2026
+    <main class="max-w-7xl mx-auto px-12">
+        <section class="hero-section">
+            <div class="max-w-4xl">
+                <h1 class="serif text-[120px] leading-[0.9] mb-12 italic">Fully <br><span class="text-gold">Charged.</span></h1>
+                <p class="text-3xl text-gray-400 font-light leading-relaxed mb-16">
+                    Makinzine Pro is the high-prestige terminal for the <span class="text-white font-bold">Vanguard Registry</span>. Built in Philadelphia, engineered for the State, and deployed for the permanent record.
+                </p>
+                <div class="flex gap-8">
+                    <a href="technical-manifesto.html" class="border border-gold text-gold px-12 py-5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gold hover:text-black transition-all">The Manifesto</a>
+                    <a href="vanguard-registry.html" class="bg-white text-black px-12 py-5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-gold transition-all">Join the Registry</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-32 px-12 bg-black/50 border-y border-white/5">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-            <div class="quest-card p-12 rounded-[3rem] hover:translate-y-[-10px] transition duration-500">
-                <h4 class="text-3xl font-black italic mb-4">Squire</h4>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 30%;"></div></div>
-                <p class="text-xs text-gray-500 mb-8 leading-relaxed">Initiate your impact. Support technical mentorship for local Philadelphia youth entering the tech corridor.</p>
-                <div class="text-4xl font-black mb-8">$25<span class="text-xs text-gray-400">/MO</span></div>
-                <button class="w-full bg-white text-black font-black py-4 rounded-2xl uppercase text-[10px] tracking-[0.2em] hover:bg-xp-green hover:shadow-[0_0_20px_var(--xp-green)] transition">Start Quest</button>
-            </div>
-            <div class="quest-card p-12 rounded-[3rem] border-gold/40 hover:translate-y-[-10px] transition duration-500">
-                <h4 class="text-3xl font-black italic text-gold mb-4">Knight</h4>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 75%;"></div></div>
-                <p class="text-xs text-gray-300 mb-8 leading-relaxed">Command the mission. Fully fund Gov-Contract training simulations for a community mentorship pod.</p>
-                <div class="text-4xl font-black text-gold mb-8">$150<span class="text-xs text-gray-400">/MO</span></div>
-                <button class="w-full bg-gold text-black font-black py-4 rounded-2xl uppercase text-[10px] tracking-[0.2em] hover:bg-white transition">Ascend Now</button>
-            </div>
-            <div class="quest-card p-12 rounded-[3rem] hover:translate-y-[-10px] transition duration-500">
-                <h4 class="text-3xl font-black italic mb-4">Oracle</h4>
-                <div class="xp-bar mb-6"><div class="xp-fill" style="width: 100%;"></div></div>
-                <p class="text-xs text-gray-500 mb-8 leading-relaxed">Unlock God Mode. Directly influence foundation policy and schedule high-profile technical summits.</p>
-                <div class="text-4xl font-black mb-8">$500<span class="text-xs text-gray-400">/MO</span></div>
-                <button class="w-full border border-white/50 text-white font-black py-4 rounded-2xl uppercase text-[10px] tracking-[0.2em] hover:bg-white hover:text-black transition">Unlock Access</button>
-            </div>
-        </div>
-    </section>
-
-    <footer class="pt-32 pb-16 px-12 border-t border-gold/30 bg-black">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-20 mb-24">
-            <div>
-                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Non-Profit Alignment</h5>
-                <p class="text-[11px] text-gray-500 leading-relaxed mb-6 italic">Strategically aligning with the Lenfest Institute and Dept. of Education to scale cyber-literacy.</p>
-                <a href="#" class="text-[9px] font-bold border-b border-gold pb-1 uppercase tracking-widest text-white">The Manifesto</a>
-            </div>
-            <div>
-                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Events & Expo</h5>
-                <ul class="text-[11px] space-y-4 text-gray-600">
-                    <li class="hover:text-white transition cursor-pointer">/ Center City Tech Summit 2026</li>
-                    <li class="hover:text-white transition cursor-pointer">/ Gov-Ops Youth Mentorship</li>
-                    <li class="hover:text-white transition cursor-pointer">/ Vanguard Gala</li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">Strategic Affiliations</h5>
-                <ul class="text-[11px] space-y-4 text-gray-600">
-                    <li class="hover:text-white transition cursor-pointer">U.S. Department of Commerce</li>
-                    <li class="hover:text-white transition cursor-pointer">Philadelphia Housing Authority</li>
-                    <li class="hover:text-white transition cursor-pointer">Vexilla AI Labs</li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="text-[10px] font-black uppercase tracking-widest text-gold mb-10">National Mission</h5>
-                <p class="text-[11px] text-gray-500 italic leading-relaxed">Transforming local community members into federal contract assets through disciplined mentorship.</p>
-            </div>
-        </div>
-        <div class="text-center pt-10 border-t border-white/5 text-[9px] tracking-[1.2em] opacity-30 font-black">
-            MAKINZINE PRO BY SOLOMON KIN x VEXILLA AITS // PHILLY 2026
-        </div>
-    </footer>
+        </section>
+    </main>
 
 </body>
 </html>
-
-
