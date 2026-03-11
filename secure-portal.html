@@ -3,192 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SECURE PORTAL | Makinzine Pro Liaison</title>
+    <title>SECURE PORTAL | Vexilla AITS Liaison</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-            --alert-red: #ff3b3b;
-        }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* U/**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});NCHANGING 3X LOGO HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img { height: 240px; width: auto; display: block; }
-
-        /* PORTAL INTERFACE */
-        .portal-frame {
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,1) 100%);
+        /* Portal-specific UI */
+        .portal-box {
+            background: linear-gradient(145deg, #0a0a0a 0%, #020202 100%);
             border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 40px;
             padding: 4rem;
-            box-shadow: 0 0 100px rgba(0,0,0,1);
+            border-radius: 50px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
         }
-
-        .input-field {
-            background: transparent;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            width: 100%;
-            padding: 1.5rem 0;
-            font-size: 1.2rem;
-            color: white;
-            outline: none;
-            transition: border-color 0.4s;
-        }
-
-        .input-field:focus { border-color: var(--gold); }
-
-        /* SCANNER ANIMATION */
-        .scanner-line {
-            height: 2px;
-            background: var(--gold);
-            width: 100%;
+        .portal-box::after {
+            content: '';
             position: absolute;
-            top: 0;
-            opacity: 0.3;
-            box-shadow: 0 0 15px var(--gold);
-            animation: scan 4s infinite linear;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            animation: scan 3s linear infinite;
         }
-
         @keyframes scan {
-            0% { top: 0; }
-            100% { top: 100%; }
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+        input {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: white;
+            font-family: monospace;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
         }
     </style>
 </head>
-<body class="antialiased pt-[280px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
                 <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="technical-manifesto.html" class="opacity-50 hover:opacity-100 transition">Technical</a>
-                <span class="text-gold">Secure Portal</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="vanguard-registry.html">Vanguard</a>
+                <a href="technical-manifesto.html">Technical</a>
+                <span class="text-gold">Liaison</span>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-12 py-20 relative">
+    <main class="max-w-4xl mx-auto px-12 flex flex-col items-center justify-center min-h-[80vh]">
         
-        <div class="portal-frame relative overflow-hidden">
-            <div class="scanner-line"></div>
-            
-            <div class="mb-16">
-                <span class="text-[10px] font-black uppercase tracking-[0.5em] text-gold mb-4 block">System Status: Encrypted</span>
-                <h1 class="serif text-6xl mb-6">Request <br><span class="italic text-white">Liaison.</span></h1>
-                <p class="text-gray-500 text-sm leading-relaxed uppercase tracking-widest">Authorized Access Only // Direct Line to Vexilla AITS Executive Office</p>
-            </div>
-
-            <form class="space-y-12">
-                <div>
-                    <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Identity / Organization</label>
-                    <input type="text" class="input-field" placeholder="Full Name or Federal ID">
-                </div>
-
-                <div class="grid grid-cols-2 gap-12">
-                    <div>
-                        <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Clearance Level</label>
-                        <select class="input-field bg-black text-sm">
-                            <option>Series A Potential Investor</option>
-                            <option>Government Contracting Officer</option>
-                            <option>Non-Profit Director (Grant Alignment)</option>
-                            <option>Press & Media (Inquiry)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Secure Callback</label>
-                        <input type="email" class="input-field" placeholder="Encrypted Email">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="text-[9px] font-black uppercase tracking-widest text-gray-500">Subject of Inquiry</label>
-                    <textarea class="input-field h-32" placeholder="Detail the nature of your alignment or project..."></textarea>
-                </div>
-
-                <div class="pt-8">
-                    <button class="w-full bg-white text-black font-black py-6 rounded-xl uppercase tracking-[0.4em] text-xs hover:bg-gold transition-all duration-500 group">
-                        Establish Connection <span class="ml-4 group-hover:translate-x-2 inline-block transition">→</span>
-                    </button>
-                </div>
-            </form>
+        <div class="text-center mb-16">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Encryption Level: AES-512</span>
+            <h1 class="serif text-6xl mb-4 italic">Vexilla <span class="text-white">Liaison.</span></h1>
+            <p class="text-gray-500 text-sm tracking-widest uppercase font-bold">Authorized Access Only</p>
         </div>
 
-        <div class="mt-12 text-center">
-            <p class="text-[9px] text-gray-700 uppercase tracking-[0.2em] max-w-lg mx-auto leading-loose">
-                NOTICE: Communications via this portal are sandboxed within the .kin container environment. By submitting, you agree to the Vexilla Foundation Privacy Protocol and non-disclosure standards.
-            </p>
+        <div class="portal-box w-full max-w-md">
+            <form action="#">
+                <label class="text-[9px] font-black uppercase tracking-widest text-gray-500 mb-2 block">Vexilla ID / Knight Hash</label>
+                <input type="text" placeholder="0x000...000" required>
+                
+                <label class="text-[9px] font-black uppercase tracking-widest text-gray-500 mb-2 block">Secure Pass-Key</label>
+                <input type="password" placeholder="••••••••" required>
+                
+                <button type="submit" class="w-full bg-white text-black font-black py-5 rounded-2xl uppercase tracking-[0.4em] text-[10px] hover:bg-gold transition-all duration-500">
+                    Initialize Container
+                </button>
+            </form>
+            
+            <div class="mt-8 flex justify-between items-center opacity-30">
+                <span class="text-[8px] font-bold text-white uppercase tracking-tighter">Status: Shield-Mode Active</span>
+                <span class="text-[8px] font-bold text-white uppercase tracking-tighter">Node: PHL-01</span>
+            </div>
+        </div>
+
+        <div class="mt-20 flex gap-12 opacity-20 hover:opacity-100 transition duration-700">
+             
+            <div class="text-center">
+                <p class="text-[8px] font-black text-gold uppercase tracking-widest">Biometric Link</p>
+                <div class="h-1 w-12 bg-gold/50 mx-auto mt-2"></div>
+            </div>
+            <div class="text-center">
+                <p class="text-[8px] font-black text-gold uppercase tracking-widest">Haptic Auth</p>
+                <div class="h-1 w-12 bg-gold/50 mx-auto mt-2"></div>
+            </div>
+            <div class="text-center">
+                <p class="text-[8px] font-black text-gold uppercase tracking-widest">FIPS-Verified</p>
+                <div class="h-1 w-12 bg-gold/50 mx-auto mt-2"></div>
+            </div>
         </div>
 
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
-        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Makinzine Pro Security Terminal // 2026 Liaison Protocol
+    <footer class="py-20 text-center">
+        <div class="text-[8px] tracking-[1em] text-gray-700 font-black uppercase">
+            Emergency Wipe Protocol: Active // Clear-Site Command: [000]
         </div>
     </footer>
 
 </body>
-
 </html>
