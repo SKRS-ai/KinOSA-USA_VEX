@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOV-OPS FULFILLMENT | Makinzine Pro Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+            --gov-blue: #0a192f;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* HEADER MATCHED TO 3X LOGO (REPLICATED FROM INDEX) */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img {
+            height: 240px; 
+            width: auto;
+            display: block;
+        }
+
+        /* TIMELINE ARCHITECTURE */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            transform: translateX(-50%);
+        }
+        .step-card {
+            width: 45%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .step-card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.05); }
+
+        .step-number {
+            position: absolute;
+            top: 50%;
+            background: var(--gold);
+            color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            transform: translateY(-50%);
+        }
+
+        /* DOT PULSE */
+        .pulse-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 15px var(--gold);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            70% { transform: scale(3); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased pt-[280px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Back to Foundation</a>
+                <span class="text-gold">Operational Fulfillment</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-12 pb-32">
+        <div class="mb-24 text-center">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px]">Strategic Asset Pipeline</span>
+            <h1 class="serif text-7xl mt-6">Contract Fulfillment <br><span class="italic text-white">Timeline.</span></h1>
+            <p class="mt-8 text-gray-500 max-w-2xl mx-auto text-lg">
+                Tracking the evolution from community mentorship to federal-grade project execution.
+            </p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="flex justify-start mb-24 w-full">
+                <div class="step-card">
+                    <div class="step-number" style="right: -60px;">01</div>
+                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Vanguard Onboarding</h3>
+                    <h4 class="text-2xl font-bold mb-4">Community Selection</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        We identify high-potential youth within the Philadelphia tech corridor. These candidates enter the **Vexilla Arena** for initial cognitive and technical screening.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-end mb-24 w-full">
+                <div class="step-card">
+                    <div class="step-number" style="left: -60px;">02</div>
+                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Systems Architecture</h3>
+                    <h4 class="text-2xl font-bold mb-4">Makinzine Certification</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Mentees undergo intensive training on the **KinOS secure environment**, learning the hardware-to-software logic required for national security data handling.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-start mb-24 w-full">
+                <div class="step-card">
+                    <div class="step-number" style="right: -60px;">03</div>
+                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Federal Simulation</h3>
+                    <h4 class="text-2xl font-bold mb-4">Dark-Site Execution</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Students fulfill mock contracts designed by former federal officers, verifying their ability to work under high-stress, high-security protocols.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-end mb-24 w-full">
+                <div class="step-card border-gold bg-gold/5">
+                    <div class="step-number" style="left: -60px;">04</div>
+                    <div class="pulse-dot" style="top: -6px; left: -6px;"></div>
+                    <h3 class="text-gold font-black uppercase tracking-widest text-xs mb-4">Phase: Operational Deployment</h3>
+                    <h4 class="text-2xl font-bold mb-4">Contract Fulfillment</h4>
+                    <p class="text-sm text-gray-200 leading-relaxed">
+                        Certified mentors lead pods to fulfill active **U.S. Department of Commerce** or **Lenfest Institute** contracts, delivering professional-grade results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Vexilla Gov-Ops Division // Terminal ID: 00-482-PHL
+        </div>
+    </footer>
+
+</body>
+</html>
