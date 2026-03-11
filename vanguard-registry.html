@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANGUARD REGISTRY | Philly Tech Corridor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+            --xp-green: #39ff14;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* UNCHANGING 3X LOGO HEADER ARCHITECTURE */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img {
+            height: 240px; 
+            width: auto;
+            display: block;
+        }
+
+        /* LIVE TICKER */
+        .live-ticker {
+            background: var(--gold);
+            color: black;
+            font-size: 0.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        /* LEADERBOARD CARDS */
+        .leaderboard-row {
+            background: rgba(255,255,255,0.02);
+            border-left: 4px solid #222;
+            transition: all 0.3s ease;
+        }
+        .leaderboard-row:hover {
+            background: rgba(255,255,255,0.05);
+            border-left-color: var(--gold);
+            transform: translateX(10px);
+        }
+
+        /* INTAKE FORM STYLE */
+        input, select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            outline: none;
+        }
+        input:focus { border-color: var(--gold); }
+    </style>
+</head>
+<body class="antialiased pt-[260px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="gov-ops-fulfillment.html" class="opacity-50 hover:opacity-100 transition">Gov-Ops</a>
+                <span class="text-gold">Vanguard Registry</span>
+            </nav>
+        </div>
+    </header>
+
+    <div class="live-ticker">
+        PHILLY VANGUARD STATUS: PHASE II ACTIVE // 124 MENTEES ENROLLED // 14 GOV-CONTRACTS PENDING
+    </div>
+
+    <main class="max-w-7xl mx-auto px-12 py-32">
+        <div class="grid lg:grid-cols-2 gap-32">
+            
+            <div>
+                <h2 class="serif text-6xl mb-12">The Philadelphia <br><span class="text-gold italic">Leaderboard.</span></h2>
+                <p class="text-gray-500 mb-12 uppercase text-[10px] tracking-widest font-black">Top Asset Progress: Q1 2026</p>
+                
+                <div class="space-y-4">
+                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
+                        <div class="flex items-center gap-6">
+                            <span class="text-gold font-black text-2xl italic">01</span>
+                            <div>
+                                <h4 class="font-bold uppercase tracking-widest">Marcus V.</h4>
+                                <p class="text-[10px] text-gray-500">Mentorship: Level Max (Oracle)</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xp-green font-mono text-xs">24,500 XP</span>
+                            <p class="text-[8px] text-gray-600 uppercase">3 Gov Contracts Completed</p>
+                        </div>
+                    </div>
+
+                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
+                        <div class="flex items-center gap-6">
+                            <span class="text-gray-500 font-black text-2xl italic">02</span>
+                            <div>
+                                <h4 class="font-bold uppercase tracking-widest">Elena R.</h4>
+                                <p class="text-[10px] text-gray-500">Mentorship: Level 42 (Knight)</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xp-green font-mono text-xs">18,200 XP</span>
+                            <p class="text-[8px] text-gray-600 uppercase">1 Gov Contract Active</p>
+                        </div>
+                    </div>
+
+                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
+                        <div class="flex items-center gap-6">
+                            <span class="text-gray-500 font-black text-2xl italic">03</span>
+                            <div>
+                                <h4 class="font-bold uppercase tracking-widest">Jordan T.</h4>
+                                <p class="text-[10px] text-gray-500">Mentorship: Level 12 (Squire)</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xp-green font-mono text-xs">4,100 XP</span>
+                            <p class="text-[8px] text-gray-600 uppercase">Training Phase: Hardware Logic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-12 rounded-[40px] border border-white/10">
+                <h3 class="serif text-4xl mb-8">Join the <span class="text-gold italic">Quest.</span></h3>
+                <p class="text-sm text-gray-400 mb-10 leading-relaxed">
+                    Whether you are a community student looking to level up or a partner looking to sponsor a pod, enter the registry below to begin your technical evolution.
+                </p>
+                
+                <form class="space-y-6">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Participant Name</label>
+                        <input type="text" placeholder="Legal or Guardian Signature Name">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Registry Intent</label>
+                            <select>
+                                <option>Mentee (Student)</option>
+                                <option>Mentor (Advisor)</option>
+                                <option>Corporate Sponsor</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Location Hub</label>
+                            <select>
+                                <option>Center City Lab</option>
+                                <option>Philly West Hub</option>
+                                <option>Remote/Digital Pod</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Why do you align with our mission?</label>
+                        <textarea class="bg-white/5 border border-white/10 p-4 rounded-lg h-32 text-sm outline-none focus:border-gold" placeholder="Briefly explain your vision for the community and the state."></textarea>
+                    </div>
+                    <button class="w-full bg-gold text-black font-black py-5 rounded-2xl uppercase tracking-[0.3em] text-xs hover:bg-white transition shadow-xl">
+                        Verify and Submit Asset
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Makinzine Pro Vanguard Registry // Authorized Hub: Philadelphia
+        </div>
+    </footer>
+
+</body>
+</html>
