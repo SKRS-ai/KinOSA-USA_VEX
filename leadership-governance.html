@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEADERSHIP | Vexilla Governance Council</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* UNCHANGING 3X LOGO HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img { height: 240px; width: auto; display: block; }
+
+        /* PROFILE CARDS */
+        .profile-card {
+            border: 1px solid rgba(255,255,255,0.05);
+            background: #050505;
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        .profile-image {
+            height: 400px;
+            filter: grayscale(100%) contrast(1.2);
+            transition: 0.8s ease;
+            object-fit: cover;
+        }
+        .profile-card:hover .profile-image {
+            filter: grayscale(0%) contrast(1);
+        }
+    </style>
+</head>
+<body class="antialiased pt-[280px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="vexilla-arena-phl.html" class="opacity-50 hover:opacity-100 transition">Arena</a>
+                <span class="text-gold">Leadership</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-12 py-20">
+        
+        <div class="mb-32">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Strategic Oversight</span>
+            <h1 class="serif text-8xl mb-8 italic">The Council of <br><span class="text-white">Intent.</span></h1>
+            <p class="text-2xl text-gray-500 font-light max-w-3xl leading-relaxed">
+                A unique synthesis of federal defense expertise, community activism, and hardware engineering. This is the team driving the Makinzine Pro mandate.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div class="profile-card rounded-[40px]">
+                <img src="solomon_kin.jpg" alt="Solomon Kin" class="profile-image w-full">
+                <div class="p-10">
+                    <h3 class="serif text-3xl mb-2">Solomon Kin</h3>
+                    <p class="text-gold font-black uppercase tracking-widest text-[9px] mb-6">Founder & Chief Architect</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Visionary lead behind the 'Naked Mode' philosophy and the Vexilla AITS ecosystem. Architect of the Philadelphia Pilot.</p>
+                </div>
+            </div>
+
+            <div class="profile-card rounded-[40px]">
+                <div class="h-[400px] bg-zinc-900 flex items-center justify-center">
+                    <span class="text-zinc-800 font-black text-6xl">GOV</span>
+                </div>
+                <div class="p-10">
+                    <h3 class="serif text-3xl mb-2">Director of Ops</h3>
+                    <p class="text-gold font-black uppercase tracking-widest text-[9px] mb-6">Federal Liaison Office</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Specializing in Gov-Ops compliance and the seamless integration of Vanguard mentes into national security pipelines.</p>
+                </div>
+            </div>
+
+            <div class="profile-card rounded-[40px]">
+                <div class="h-[400px] bg-zinc-900 flex items-center justify-center">
+                    <span class="text-zinc-800 font-black text-6xl">PHL</span>
+                </div>
+                <div class="p-10">
+                    <h3 class="serif text-3xl mb-2">Lead Mentor</h3>
+                    <p class="text-gold font-black uppercase tracking-widest text-[9px] mb-6">Vanguard Community Relations</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">Managing the Center City Lab and the Squire-to-Oracle technical progression for the Philadelphia corridor.</p>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <div class="mt-40 bg-white/5 p-20 rounded-[60px] border border-white/10 text-center">
+            <h2 class="serif text-4xl mb-8 italic">Ethical Sovereignty.</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed text-sm mb-12">
+                Our board operates under a triple-bottom-line mandate: National Security Excellence, Community Wealth Creation, and Hardware Integrity. We do not answer to the data economy; we answer to the State and the People.
+            </p>
+            <div class="flex justify-center gap-12 grayscale opacity-50">
+                <span class="text-[10px] font-black uppercase tracking-widest">Transparency Report 2026</span>
+                <span class="text-[10px] font-black uppercase tracking-widest">Ethics Charter</span>
+                <span class="text-[10px] font-black uppercase tracking-widest">Audit Trails</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Vexilla Council // Governance Protocol Alpha
+        </div>
+    </footer>
+
+</body>
+</html>
