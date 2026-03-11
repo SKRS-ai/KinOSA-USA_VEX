@@ -3,316 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAKINZINE PRO | Official Presentation</title>
+    <title>MAKINZINE PRO | The New Standard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@200;400;700;900&display=swap');
 
         :root {
-            --obsidian: #0a0a0a;
-            --gold: #d4af37;
-            --glass: rgba(255, 255, 255, 0.03);
+            --obsidian: #050505;
+            --tech-white: #ffffff;
+            --neural-glow: rgba(255, 255, 255, 0.4);
+            --gold-accent: #d4af37;
         }
 
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: var(--obsidian);
+            color: var(--tech-white);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* HERO LOGO STYLE */
-        .hero-logo {
-            font-size: clamp(3rem, 10vw, 8rem);
+        /* TOP-LEFT PRESTIGE LOGO */
+        .nav-logo {
             font-weight: 900;
-            letter-spacing: -0.05em;
-            line-height: 0.8;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #fff 40%, #666 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* HARDWARE CHASSIS ENHANCEMENTS */
-        .device-container {
-            perspective: 2000px;
-        }
-
-        .makinzine-chassis {
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 30px;
-            background: #111;
-            padding: 20px;
-            box-shadow: 0 0 100px rgba(212, 175, 55, 0.1);
+            letter-spacing: -0.02em;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
             position: relative;
-            transform: rotateY(-10deg) rotateX(5deg);
-            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
-        .makinzine-chassis:hover {
-            transform: rotateY(0deg) rotateX(0deg);
+        .nav-logo:hover {
+            text-shadow: 0 0 15px var(--neural-glow), 0 0 30px rgba(212, 175, 55, 0.2);
+            transform: scale(1.02);
         }
 
-        .hardware-logo-engraving {
+        .nav-logo span {
+            color: var(--gold-accent);
+            font-style: italic;
+            margin-left: 2px;
+        }
+
+        /* TECHIE GLOW & SLEEK LINE ANIMATION */
+        .scan-line {
+            width: 0%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--tech-white), transparent);
             position: absolute;
-            bottom: 40px;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.6s ease;
+        }
+
+        .nav-logo:hover .scan-line {
+            width: 100%;
+        }
+
+        /* PRODUCT REPRESENTATION CARDS */
+        .product-card {
+            background: linear-gradient(145deg, #0f0f0f, #050505);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .spec-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
+
+        /* HERO IMAGE ENHANCEMENT */
+        .hero-image-container {
+            position: relative;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .glow-orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            font-weight: 900;
-            letter-spacing: 0.8em;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-            text-shadow: 1px 1px 2px #000;
-        }
-
-        /* HAPTIC ANIMATION */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-        }
-
-        .haptic-active {
-            animation: pulse 2s infinite;
-        }
-
-        .feature-card {
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(20px);
-            transition: all 0.4s ease;
-        }
-
-        .feature-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: var(--gold);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
-        <div class="mb-4 text-gold font-bold tracking-[0.5em] uppercase text-xs">A Solomon Kin Production</div>
-        <h1 class="hero-logo">MAKINZINE<br><span class="italic text-gold">PRO</span></h1>
-        <p class="mt-8 text-gray-400 max-w-2xl text-lg font-light tracking-wide">
-            The world's first distraction-free digital terminal. Designed for the <span class="text-white border-b border-gold">Permanent Record</span>.
-        </p>
-        
-        <div class="mt-16 device-container w-full max-w-4xl">
-            <div class="makinzine-chassis haptic-active">
-                <img src="hero_front.jpg" alt="Makinzine Pro Display" class="w-full rounded-2xl shadow-2xl">
-                <div class="hardware-logo-engraving">MAKINZINE PRO</div>
+    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center backdrop-blur-md">
+        <div class="nav-logo text-2xl uppercase">
+            Makinzine <span>Pro</span>
+            <div class="scan-line"></div>
+        </div>
+        <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[0.4em] opacity-60">
+            <a href="#" class="hover:opacity-100 transition">Evolution</a>
+            <a href="#" class="hover:opacity-100 transition">Architecture</a>
+            <a href="#" class="hover:opacity-100 transition">Vanguard Pilot</a>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-20 px-10 min-h-screen flex flex-col items-center">
+        <div class="max-w-6xl w-full grid lg:grid-cols-2 gap-16 items-center">
+            <div class="z-10">
+                <p class="spec-label mb-4">Engineering Prestige // VexillaAITS</p>
+                <h1 class="serif text-8xl leading-none mb-8">Naked.<br><span class="italic font-light">By Design.</span></h1>
+                <p class="text-gray-400 text-lg max-w-md leading-relaxed mb-12">
+                    The Makinzine Pro is the final word in distraction-free media. A 15.0" sanctuary for the high-impact ritual of the Vexilla Daily.
+                </p>
+                <div class="flex space-x-8">
+                    <button class="border border-white/20 px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">The Technical Manifesto</button>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <div class="glow-orb"></div>
+                <img src="hero_naked_mode.jpg" alt="Makinzine Pro Front View" class="w-full relative z-10 rounded-xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
             </div>
         </div>
     </header>
 
-    <section class="py-32 px-6">
+    <section class="py-32 px-10 bg-[#080808]">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
-                <div>
-                    <h2 class="serif text-6xl italic mb-8">Naked Mode.<br>Zero Interruptions.</h2>
-                    <p class="text-gray-400 text-xl leading-relaxed mb-8">
-                        Right out of the box, the <strong>Vexilla Daily</strong> presents the world to you in a high-prestige 15-page standard. No notifications. No battery anxiety. Just pure intent.
-                    </p>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <span class="text-gold mr-4">/ 01</span>
-                            <span><strong>Standardized 15-Page Count:</strong> Curated for focus.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-gold mr-4">/ 02</span>
-                            <span><strong>Live Ink Portraits:</strong> Subtle cinemagraphs that breathe life into journalism.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-gold mr-4">/ 03</span>
-                            <span><strong>Proximity Narration:</strong> Tap to activate professional-grade audio playback.</span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="flex justify-between items-end mb-20 border-b border-white/5 pb-10">
+                <h2 class="serif text-5xl">The Anatomy of <br>Hardware Truth.</h2>
+                <p class="text-xs tracking-widest uppercase opacity-40 pb-2">Component Detail Layer v1.0</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
                 
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="feature-card p-8 rounded-3xl">
-                        <img src="spine_close.jpg" alt="Haptic Spine" class="w-full h-32 object-cover rounded-xl mb-4 opacity-70">
-                        <h4 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-2">Tactile Layer</h4>
-                        <p class="text-xs text-gray-400">Haptic spine mimicking the weight of physical paper.</p>
-                    </div>
-                    <div class="feature-card p-8 rounded-3xl mt-8">
-                        <img src="sightless_rear.jpg" alt="Rear Interface" class="w-full h-32 object-cover rounded-xl mb-4 opacity-70">
-                        <h4 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-2">Sightless Core</h4>
-                        <p class="text-xs text-gray-400">Braille-enabled muscle memory navigation.</p>
+                <div class="product-card p-1">
+                    <div class="bg-black p-10 rounded-lg h-full">
+                        <img src="haptic_spine.jpg" alt="Haptic Spine Detail" class="w-full h-48 object-cover rounded-md mb-8 grayscale hover:grayscale-0 transition duration-500">
+                        <span class="spec-label">Sensation Engine</span>
+                        <h4 class="text-xl font-bold mt-2 mb-4">The Haptic Spine</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Integrated leather-wrapped linear actuators that simulate the physics of premium paper stock.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-40 bg-white text-black text-center">
-        <div class="max-w-5xl mx-auto px-6">
-            <h3 class="text-[12vw] font-black leading-none tracking-tighter uppercase mb-8">
-                MAKINZINE<br>PRO
-            </h3>
-            <p class="text-sm font-bold tracking-[0.4em] uppercase">The New Standard for Human Knowledge</p>
-        </div>
-    </section>
-
-    <footer class="py-20 border-t border-white/10 text-center">
-        <div class="text-[10px] tracking-[0.5em] text-gray-500 uppercase">
-            Solomon Kin x Vexilla AITS | Philadelphia Tech Corridor | 2026
-        </div>
-    </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAKINZINE PRO | The Permanent Record</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;900&display=swap');
-
-        :root {
-            --obsidian: #0f0f0f;
-            --cream: #fcfaf7;
-            --gold: #c5a059;
-        }
-
-        body {
-            background-color: var(--cream);
-            color: var(--obsidian);
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* The Hardware Frame */
-        .makinzine-chassis {
-            border: 14px solid var(--obsidian);
-            border-radius: 24px;
-            position: relative;
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
-            background: #fff;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Branding on the Hardware */
-        .brand-engraving {
-            position: absolute;
-            bottom: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 900;
-            letter-spacing: 0.4em;
-            font-size: 0.65rem;
-            color: rgba(0,0,0,0.3);
-            text-transform: uppercase;
-        }
-
-        .haptic-spine-visual {
-            position: absolute;
-            left: -14px;
-            top: 15%;
-            height: 70%;
-            width: 28px;
-            background: #2a221b; /* Leather brown */
-            border-radius: 12px 0 0 12px;
-            box-shadow: inset -5px 0 10px rgba(0,0,0,0.5);
-        }
-
-        .glow-effect:hover {
-            box-shadow: 0 0 40px rgba(197, 160, 89, 0.3);
-            transform: translateY(-5px);
-        }
-    </style>
-</head>
-<body class="antialiased">
-
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <div class="text-xl font-black tracking-tighter">MAKINZINE <span class="text-gold">PRO</span></div>
-            <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em]">
-                <a href="#features" class="hover:text-gold transition">The Standard</a>
-                <a href="#vision" class="hover:text-gold transition">Vexilla Daily</a>
-                <a href="#tech" class="hover:text-gold transition">Technical</a>
-                <a href="#" class="border-b-2 border-gold pb-1">Pre-Order Vanguard</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="pt-40 pb-20 px-8">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h1 class="text-7xl font-bold leading-[0.9] serif italic mb-8">
-                    Sight is <br><span class="text-gold">Optional.</span><br>Prestige is not.
-                </h1>
-                <p class="text-xl text-gray-500 max-w-lg leading-relaxed mb-10">
-                    The 15.0" Makinzine Pro. A distraction-free sanctuary for the high-impact ritual of the <strong>Vexilla Daily</strong>. 
-                </p>
-                <div class="flex items-center space-x-6">
-                    <button class="bg-black text-white px-10 py-5 font-bold uppercase text-xs tracking-widest hover:bg-gold transition">Access Pilot Registry</button>
-                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Philadelphia | 2026</span>
-                </div>
-            </div>
-
-            <div class="relative">
-                <div class="makinzine-chassis glow-effect">
-                    <div class="haptic-spine-visual"></div>
-                    <img src="hero_front.jpg" alt="Makinzine Pro Naked Mode" class="w-full h-auto block rounded-[10px]">
-                    <div class="brand-engraving">MAKINZINE PRO</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="grid md:grid-cols-3 gap-16">
-                
-                <div class="space-y-6">
-                    <div class="h-80 bg-stone-50 rounded-2xl overflow-hidden border border-stone-100 relative">
-                        <img src="spine_close.jpg" alt="Haptic Spine" class="w-full h-full object-cover">
-                        <div class="absolute bottom-4 left-4 text-[9px] font-bold text-white bg-black/50 px-2 py-1 uppercase">MAKINZINE PRO: HAPTIC SPINE</div>
+                <div class="product-card p-1">
+                    <div class="bg-black p-10 rounded-lg h-full">
+                        <img src="sightless_nav.jpg" alt="Rear Interface Detail" class="w-full h-48 object-cover rounded-md mb-8 grayscale hover:grayscale-0 transition duration-500">
+                        <span class="spec-label">Adaptive Interface</span>
+                        <h4 class="text-xl font-bold mt-2 mb-4">Sightless Navigation</h4>
+                        <h4 class="text-xl font-bold mt-2 mb-4">Sightless Navigation</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Rear-mounted biometric rockers with Braille micro-textures for complete eyes-free operation.</p>
                     </div>
-                    <h3 class="serif text-3xl italic">The Tactile Spine</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Hand-stitched leather integrated with 5 micro-actuators. Feel the weight of the news as you flip.</p>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="h-80 bg-stone-50 rounded-2xl overflow-hidden border border-stone-100 relative">
-                        <img src="sightless_rear.jpg" alt="Sightless Nav" class="w-full h-full object-cover">
-                        <div class="absolute bottom-4 left-4 text-[9px] font-bold text-white bg-black/50 px-2 py-1 uppercase">MAKINZINE PRO: REAR INTERFACE</div>
+                <div class="product-card p-1">
+                    <div class="bg-black p-10 rounded-lg h-full">
+                        <img src="chassis_map.jpg" alt="Internal Chassis Map" class="w-full h-48 object-cover rounded-md mb-8 grayscale hover:grayscale-0 transition duration-500">
+                        <span class="spec-label">Internal Architecture</span>
+                        <h4 class="text-xl font-bold mt-2 mb-4">The Obsidian Frame</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">CNC-machined aluminum skeleton housing the revolutionary OLED-Ink hybrid display matrix.</p>
                     </div>
-                    <h3 class="serif text-3xl italic">Sightless Engine</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Braille-encoded rear buttons. Navigate the 15-page standard through pure muscle memory.</p>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="h-80 bg-stone-50 rounded-2xl overflow-hidden border border-stone-100 relative">
-                        <img src="chassis_map.jpg" alt="Chassis Map" class="w-full h-full object-cover">
-                        <div class="absolute bottom-4 left-4 text-[9px] font-bold text-white bg-black/50 px-2 py-1 uppercase">MAKINZINE PRO: INTERNAL MAP</div>
-                    </div>
-                    <h3 class="serif text-3xl italic">Obsidian Core</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Anodized aluminum frame protecting the high-fidelity OLED-Ink hybrid display.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="bg-black py-20 text-white">
-        <div class="max-w-7xl mx-auto px-8 text-center">
-            <div class="text-4xl font-black mb-4">MAKINZINE <span class="text-gold">PRO</span></div>
-            <p class="text-gray-500 mb-10 text-xs tracking-widest uppercase">The First Truly Accessible Digital Magazine</p>
-            <div class="text-[10px] text-stone-700 tracking-widest font-bold border-t border-stone-900 pt-10">
-                BY SOLOMON KIN x VEXILLA AITS | PHILADELPHIA 2026
-            </div>
+    <section class="py-60 px-10 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/5 opacity-10 pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h3 class="text-[10vw] serif leading-none mb-10 opacity-10 uppercase select-none">Makinzine Pro</h3>
+            <h4 class="text-4xl mb-6">"Wait for the deep dive."</h4>
+            <p class="text-gold font-bold tracking-[0.6em] uppercase text-xs">Philly Vanguard Launch Q4 2026</p>
         </div>
+    </section>
+
+    <footer class="py-10 px-10 border-t border-white/5 flex justify-between items-center text-[8px] tracking-[0.5em] uppercase opacity-40">
+        <div>Solomon Kin LLC x VexillaAITS</div>
+        <div>All Systems Verified // Naked Mode Active</div>
     </footer>
 
 </body>
 </html>
-
