@@ -17,7 +17,42 @@
         body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* THE 3X LOGO HEADER - UNCHANGING */
+        /* THE 3X LOGO/**
+ * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
+ * Version: 2026.03.11
+ * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
+ */
+
+const navLinks = [
+    { name: "Foundation", url: "index.html" },
+    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
+    { name: "Vanguard", url: "vanguard-registry.html" },
+    { name: "Events", url: "events-gallery.html" },
+    { name: "Affiliations", url: "affiliations-awards.html" },
+    { name: "Technical", url: "technical-manifesto.html" },
+    { name: "Liaison", url: "secure-portal.html" },
+    { name: "Media", url: "press-media.html" },
+    { name: "Security", url: "privacy-security-protocol.html" },
+    { name: "Investors", url: "series-a-investor-deck.html" },
+    { name: "Archives", url: "mission-archives.html" },
+    { name: "Support", url: "support-terminal.html" },
+    { name: "Roadmap", url: "global-expansion-roadmap.html" },
+    { name: "Leadership", url: "leadership-governance.html" },
+    { name: "Patents", url: "patents-legal.html" }
+];
+
+// Logic to dynamically highlight active page and ensure logo link works
+document.addEventListener("DOMContentLoaded", () => {
+    const navContainer = document.querySelector('nav');
+    const currentPath = window.location.pathname.split("/").pop();
+
+    if (navContainer) {
+        navContainer.innerHTML = navLinks.map(link => {
+            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
+            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
+        }).join('');
+    }
+}); HEADER - UNCHANGING */
         header {
             position: fixed;
             top: 0;
@@ -135,4 +170,5 @@
     </footer>
 
 </body>
+
 </html>
