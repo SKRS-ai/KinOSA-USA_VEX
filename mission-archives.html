@@ -3,181 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MISSION ARCHIVES | The Genesis of Makinzine Pro</title>
+    <title>MISSION ARCHIVES | The Vexilla Philosophy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-            --parchment: #a8a8a8;
-        }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* UN/**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});CHANGING 3X LOGO HEADER ARCHITECTURE */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img { height: 240px; width: auto; display: block; }
-
-        /* ARCHIVE STORYTELLING STYLE */
-        .archive-section {
-            position: relative;
-            padding-bottom: 120px;
-            border-left: 1px dashed rgba(212, 175, 55, 0.2);
-            padding-left: 4rem;
-            margin-left: 2rem;
-        }
-        .archive-section::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 9px;
-            height: 9px;
-            background: var(--gold);
-            border-radius: 50%;
-        }
-
-        .manuscript-text {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: var(--parchment);
-            font-style: italic;
-        }
-        
-        .year-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 900;
-            font-size: 0.7rem;
-            letter-spacing: 0.5em;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased pt-[280px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
                 <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="series-a-investor-deck.html" class="opacity-50 hover:opacity-100 transition">Investors</a>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <a href="vanguard-registry.html">Vanguard</a>
                 <span class="text-gold">Archives</span>
+                <a href="series-a-investor-deck.html">Investors</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-12 py-20">
+    <main class="max-w-7xl mx-auto px-12">
         
-        <div class="mb-32">
-            <h1 class="serif text-8xl mb-8">The Wisdom of <br><span class="text-gold italic">Kinship.</span></h1>
-            <p class="text-2xl text-gray-500 font-light max-w-2xl leading-relaxed">
-                A chronicle of the hardware revolution. Understanding the past to secure the future of the community.
-            </p>
-        </div>
+        <section class="mb-32">
+            <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Origin Protocol</span>
+            <h1 class="serif text-8xl mb-8 italic">The Philly <br><span class="text-white">Incubation.</span></h1>
+            
+        </section>
 
-        <div class="archive-section">
-            <span class="year-label">MMXXIV // THE CATALYST</span>
-            <h2 class="serif text-4xl mb-8 uppercase">The Death of the Algorithm</h2>
-            <p class="manuscript-text mb-8">
-                "We realized that the world didn't need more 'connected' devices; it needed 'contained' devices. The noise of the public internet was a tax on the urban intellect. We set out to build a sanctuary—a device that didn't just show data, but respected the user's sovereign time."
-            </p>
-            <p class="text-xs text-gray-600 font-bold tracking-widest">— From the Solomon Kin Private Journals</p>
-        </div>
-
-        <div class="archive-section">
-            <span class="year-label">MMXXV // THE FOUNDATION</span>
-            <h2 class="serif text-4xl mb-8 uppercase">Mentoring the State</h2>
-            <p class="manuscript-text mb-8">
-                "The Vexilla Foundation was born from a simple truth: The youth of Philadelphia are not a burden to be managed, but an asset to be deployed. By aligning their raw talent with federal security standards, we create a closed loop of prosperity and national safety."
-            </p>
-            <p class="text-xs text-gray-600 font-bold tracking-widest">— Executive Mission Statement v1.0</p>
-        </div>
-
-        <div class="archive-section">
-            <span class="year-label">MMXXVI // THE REALIZATION</span>
-            <h2 class="serif text-4xl mb-8 uppercase">The Makinzine Pro Era</h2>
-            <p class="manuscript-text mb-8">
-                "Hardware is the final frontier of trust. The Makinzine Pro is the physical embodiment of the 'Naked Mode' philosophy—a high-prestige terminal for the elite mind. We are now operational. We are now fulfilled."
-            </p>
-            <p class="text-xs text-gray-600 font-bold tracking-widest">— Vexilla Daily Editorial</p>
-        </div>
-
-        <div class="mt-20 p-16 bg-[#050505] rounded-[50px] border border-white/5 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-12 opacity-10">
-                <img src="logo_makinzine_pro.png" class="w-64 grayscale">
+        <div class="grid lg:grid-cols-2 gap-24 mb-40">
+            <div>
+                <h2 class="serif text-4xl mb-6 italic">Why the 3X Logo?</h2>
+                <p class="text-gray-400 leading-relaxed mb-8">
+                    The three bars of the Vexilla mark represent the three pillars of our mission: **Hardware Sovereignty**, **Community Intelligence**, and **Federal Trust**. It is a symbol of a new era where Philadelphia leads the nation in secure tech manufacturing.
+                </p>
+                
             </div>
-            <h3 class="serif text-3xl mb-6">"Technology should be a tool for the state, and a sanctuary for the citizen."</h3>
-            <p class="text-gold text-[10px] font-black uppercase tracking-[0.5em]">The Solomon Kin Doctrine</p>
+            <div>
+                <h2 class="serif text-4xl mb-6 italic">The Kin Legacy</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Named after our Chief Architect, the .kin container system was born from the need to protect the data of those who have the most to lose. We believe that privacy is a civil right, and in the 21st century, civil rights are defended with silicon and haptics.
+                </p>
+            </div>
         </div>
 
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Makinzine Pro Archives // Volume I: Philadelphia
+            Vexilla Historical Division // 1776–2026
         </div>
     </footer>
 
 </body>
-
 </html>
