@@ -3,6 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinOSA-USA_VEX | The Digital Shrine</title>
+    <style>
+        :root {
+            --vexilla-blue: #0047FF;
+            --vexilla-glow: rgba(0, 71, 255, 0.6);
+            --kin-gold: #D4AF37;
+            --bg-deep: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { cursor: crosshair; box-sizing: border-box; }
+        
+        body, html {
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: white;
+            font-family: 'Inter', 'Didot', serif;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        /* Ambient Background Glows */
+        .glow-orb {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: var(--vexilla-glow);
+            filter: blur(150px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: float 20s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(100%, 50%); }
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            padding: 5vw;
+        }
+
+        /* Page 1: The High-Prestige Cover */
+        .masthead {
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            padding: 80px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 4px;
+        }
+
+        .masthead h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            margin: 0;
+            letter-spacing: 20px;
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Page 2: The Arena Hub (Subscription) */
+        .tier-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .tier-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 40px 20px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .tier-card:hover {
+            border-color: var(--vexilla-blue);
+            box-shadow: 0 0 30px var(--vexilla-glow);
+            transform: translateY(-15px);
+        }
+
+        .tier-card h3 { color: var(--kin-gold); font-size: 0.8rem; letter-spacing: 3px; }
+        .tier-card .price { font-size: 2.5rem; font-weight: bold; margin: 15px 0; }
+
+        /* Page 3: Bento Grid Non-Profits */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 15px;
+            width: 100%;
+        }
+
+        .bento-item {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .bento-item.large { grid-column: span 2; grid-row: span 2; font-size: 1.2rem; justify-content: center;}
+        .bento-item h4 { color: var(--kin-gold); margin: 0 0 5px 0; }
+
+        /* Navigation Button */
+        .nav-link {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            z-index: 100;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb"></div>
+    <a href="#" class="nav-link">ENTER THE ARENA</a>
+
+    <section>
+        <div class="masthead">
+            <p style="letter-spacing: 5px; color: var(--kin-gold);">VEXILLA × SOLOMON KIN</p>
+            <h1>MAKINZINE</h1>
+            <p>SYSTEM BOOT: KINOS-V0.1 | PHILLY R&D</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="margin-bottom: 40px; letter-spacing: 10px;">THE KINSHIP TIERS</h2>
+        <div class="tier-container">
+            <div class="tier-card">
+                <h3>01 / SCOUT</h3>
+                <div class="price">$10</div>
+                <p>Digital Literacy Support</p>
+            </div>
+            <div class="tier-card">
+                <h3>02 / ELITE</h3>
+                <div class="price">$50</div>
+                <p>Competitive Rankings</p>
+            </div>
+            <div class="tier-card">
+                <h3>03 / VANGUARD</h3>
+                <div class="price">$150</div>
+                <p>Abuse Prevention Hub</p>
+            </div>
+            <div class="tier-card">
+                <h3>04 / LEGEND</h3>
+                <div class="price">$500</div>
+                <p>Makinzine Pro Access</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="margin-bottom: 30px;">PARTNER ECOSYSTEM</h2>
+        <div class="bento-grid">
+            <div class="bento-item large">
+                <h4>THE LENFEST INSTITUTE</h4>
+                <p>Award: $150k | We host their news mission via the KinOS kernel.</p>
+            </div>
+            <div class="bento-item">
+                <h4>GAMERS OUTREACH</h4>
+                <p>Hardware for hospitalized youth.</p>
+            </div>
+            <div class="bento-item">
+                <h4>BEN FRANKLIN</h4>
+                <p>Tech R&D funding for Philly.</p>
+            </div>
+            <div class="bento-item">
+                <h4>STACK UP</h4>
+                <p>Supporting veterans through gaming.</p>
+            </div>
+            <div class="bento-item">
+                <h4>CYBERSMILE</h4>
+                <p>Stopping digital abuse.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CastAiStars | The Digital Backlot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -92,4 +301,5 @@
     </footer>
 
 </body>
+
 </html>
