@@ -3,194 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinOSA-USA_VEX | The Magazine PC Hub</title>
+    <title>KinOSA-USA_VEX | Elite Visual Interface</title>
     <style>
         :root {
             --vexilla-blue: #0047FF;
             --kin-gold: #D4AF37;
-            --prestige-dark: #050505;
-            --glossy-white: #ffffff;
-            --paper-texture: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            --deep-black: #000000;
+            --ui-white: #FFFFFF;
         }
 
-        * { box-sizing: border-box; }
-        
         body, html {
             margin: 0;
-            padding: 0;
-            background-color: var(--prestige-dark);
-            font-family: "Didot", "Playfair Display", serif; /* High-end magazine fonts */
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
+            background: var(--deep-black);
+            color: var(--ui-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* The "Shine" Overlay - Simulates high-end magazine paper */
+        .gloss-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+            pointer-events: none;
+            z-index: 999;
         }
 
         section {
             height: 100vh;
-            width: 100vw;
-            scroll-snap-align: start;
             display: flex;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Page 1: The High-Prestige Cover */
-        .cover {
-            background: linear-gradient(45deg, #000 30%, #111 100%);
-            color: white;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            padding: 0 10%;
         }
 
-        .masthead {
-            border-top: 5px solid var(--kin-gold);
-            border-bottom: 5px solid var(--kin-gold);
-            padding: 20px 0;
-            width: 80%;
-        }
-
-        .masthead h1 {
-            font-size: 8vw;
-            margin: 0;
-            letter-spacing: 15px;
+        .hero-text {
+            font-size: 12vw;
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: -5px;
+            line-height: 0.8;
+            background: linear-gradient(to bottom, #fff 50%, #333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: 0.5s;
         }
 
-        /* Page 2: Tiered Membership (Gaming Hub) */
-        .membership {
-            background-color: var(--glossy-white);
-            background-image: var(--paper-texture);
-            color: #111;
-            padding: 40px;
+        /* High-Prestige Grid for Subscriptions */
+        .tier-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px; /* Thin lines like a luxury catalog */
+            background: #222;
+            border: 1px solid #222;
+            width: 100%;
         }
 
-        .tier-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-content: center;
+        .tier-item {
+            background: var(--deep-black);
+            padding: 60px 20px;
+            text-align: center;
+            transition: background 0.3s;
         }
 
-        .tier-box {
-            border-left: 4px solid var(--vexilla-blue);
-            padding: 20px;
-            background: rgba(0, 71, 255, 0.05);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .tier-box:hover {
+        .tier-item:hover {
             background: var(--vexilla-blue);
-            color: white;
-            transform: scale(1.02);
         }
 
-        /* Page 3: The Non-Profit Grant Alignment */
-        .nonprofit-mission {
-            background-color: var(--prestige-dark);
-            color: white;
-            flex-direction: column;
-            padding: 60px;
-        }
+        .tier-item h3 { font-size: 0.7rem; letter-spacing: 5px; color: var(--kin-gold); }
+        .tier-item .amount { font-size: 3rem; margin: 20px 0; font-weight: 200; }
 
-        .grant-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            overflow-y: auto;
-            margin-top: 20px;
-        }
-
-        .grant-card {
-            background: #1a1a1a;
-            padding: 15px;
-            border: 1px solid #333;
-            font-size: 0.9rem;
-        }
-
-        .grant-card h4 { color: var(--kin-gold); margin-bottom: 5px; }
-
-        /* Login Button Overlay */
-        .login-gate {
+        /* The "Naked" Navigation */
+        .magazine-nav {
             position: fixed;
-            top: 20px;
-            right: 40px;
-            z-index: 100;
-            background: var(--kin-gold);
-            color: black;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 2px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+            left: 50%;
+            bottom: 50px;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
         }
 
+        .page-dot {
+            width: 8px; height: 8px;
+            background: #444;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .active { background: var(--vexilla-blue); box-shadow: 0 0 10px var(--vexilla-blue); }
     </style>
 </head>
 <body>
 
-    <a href="#login" class="login-gate">Member Login</a>
+    <div class="gloss-overlay"></div>
 
-    <section class="cover">
-        <div class="masthead">
-            <p>VEXILLA & SOLOMON KIN PRESENTS</p>
-            <h1>MAKINZINE</h1>
-            <p>VOLUME 01 | ISSUE 2026 | THE ARENA EDITION</p>
+    <section>
+        <p style="letter-spacing: 10px; color: var(--kin-gold);">VEXILLA × SOLOMON KIN</p>
+        <div class="hero-text">MAKIN<br>ZINE</div>
+        <p style="margin-top: 40px; opacity: 0.5;">THE STANDARD FOR VISUAL SUPREMACY</p>
+    </section>
+
+    <section>
+        <div class="tier-grid">
+            <div class="tier-item">
+                <h3>SCOUT</h3>
+                <div class="amount">$10</div>
+                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
+            </div>
+            <div class="tier-item">
+                <h3>ELITE</h3>
+                <div class="amount">$50</div>
+                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
+            </div>
+            <div class="tier-item">
+                <h3>VANGUARD</h3>
+                <div class="amount">$150</div>
+                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
+            </div>
+            <div class="tier-item">
+                <h3>LEGEND</h3>
+                <div class="amount">$500</div>
+                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
+            </div>
         </div>
     </section>
 
-    <section class="membership">
-        <div class="tier-column">
-            <h2>THE KINSHIP ARENA</h2>
-            <p>Choose your Tier. Support the Culture. Every subscription funds our mission against digital abuse and technical health initiatives.</p>
-            
-            <div class="tier-box">
-                <h3>TIER 1: SCOUT | $10</h3>
-                <p>Support Digital Literacy grants and community reach.</p>
-            </div>
-            <div class="tier-box">
-                <h3>TIER 2: ELITE | $50</h3>
-                <p>Competitive rank tracking & Vexilla dev updates.</p>
-            </div>
-            <div class="tier-box">
-                <h3>TIER 3: VANGUARD | $150</h3>
-                <p>Electronic Abuse Initiative & VIP events.</p>
-            </div>
-            <div class="tier-box">
-                <h3>TIER 4: LEGEND | $500</h3>
-                <p>Makinzine Pro Hardware early-access & voting rights.</p>
-            </div>
-        </div>
-        <div style="background: url('gaming-prestige.jpg') center; background-size: cover; border-radius: 10px;"></div>
-    </section>
-
-    <section class="nonprofit-mission">
-        <h3>PARTNERS IN THE MISSION</h3>
-        <p>We align with these 20 organizations to throw high-impact community events and hardware initiatives.</p>
-        
-        <div class="grant-grid">
-            <div class="grant-card">
-                <h4>1. The Lenfest Institute</h4>
-                <p><strong>Award:</strong> $150,000</p>
-                <p><strong>Alignment:</strong> Advancing local media tech. We provide the KinOS delivery platform for their news mission.</p>
-            </div>
-            <div class="grant-card">
-                <h4>2. Ben Franklin Tech Partners</h4>
-                <p><strong>Award:</strong> $250,000</p>
-                <p><strong>Alignment:</strong> Hardware R&D. Funding for the SK Device Technology research labs.</p>
-            </div>
-            <div class="grant-card">
-                <h4>3. Gamers Outreach</h4>
-                <p><strong>Award:</strong> $25,000+</p>
-                <p><strong>Alignment:</strong> Healthcare hardware. Bringing Makinzine Pro to hospitalized youth.</p>
-            </div>
-        </div>
-    </section>
+    <div class="magazine-nav">
+        <div class="page-dot active"></div>
+        <div class="page-dot"></div>
+        <div class="page-dot"></div>
+    </div>
 
 </body>
 </html>
