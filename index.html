@@ -3,138 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinOSA-USA_VEX | Elite Visual Interface</title>
+    <title>VEXILLA.AITS | KIN MAG PRO v1 Flagship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&family=JetBrains+Mono:wght@200;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --vexilla-blue: #0047FF;
-            --kin-gold: #D4AF37;
-            --deep-black: #000000;
-            --ui-white: #FFFFFF;
+            --bg-obsidian: #050505;
+            --accent-gold: #c5a059;
+            --accent-cyan: #00f2ff;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --interface-panel: rgba(15, 15, 15, 0.8);
         }
 
         body, html {
-            margin: 0;
-            background: var(--deep-black);
-            color: var(--ui-white);
+            margin: 0; padding: 0;
+            background-color: var(--bg-obsidian);
+            color: #ffffff;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* The "Shine" Overlay - Simulates high-end magazine paper */
-        .gloss-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
-            pointer-events: none;
-            z-index: 999;
+        /* [SYSTEM_DIRECT_ACCESS] Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 70px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 4%; box-sizing: border-box;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(20px); z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 10%;
+        .brand { font-weight: 900; letter-spacing: 5px; color: var(--accent-gold); font-size: 1.2rem; }
+        .nav-nodes a {
+            text-decoration: none; color: #888; margin-left: 25px;
+            font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+            transition: 0.4s; font-family: 'JetBrains Mono', monospace;
+        }
+        .nav-nodes a:hover { color: var(--accent-cyan); text-shadow: 0 0 10px var(--accent-cyan); }
+
+        /* [FLAGSHIP_ENTRY] Hero Section */
+        .hero {
+            height: 100vh; display: flex; align-items: center; 
+            padding: 0 8%; position: relative;
         }
 
-        .hero-text {
-            font-size: 12vw;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -5px;
-            line-height: 0.8;
-            background: linear-gradient(to bottom, #fff 50%, #333 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: 0.5s;
+        .hero-content { max-width: 600px; z-index: 5; }
+        .hero-content h1 { font-size: 5rem; line-height: 0.9; margin: 0; font-weight: 900; color: #fff; }
+        .hero-content p { color: #888; font-size: 1.2rem; line-height: 1.6; margin-top: 25px; max-width: 450px; }
+
+        /* The 3D Mockup Container */
+        .device-showroom {
+            position: absolute; right: -5%; top: 10%; width: 65%; height: 80%;
+            background: url('https://via.placeholder.com/1200x900/050505/c5a059?text=KIN+MAG+PRO+v1+RENDER') no-repeat center right;
+            background-size: contain; z-index: 1; filter: drop-shadow(0 0 50px rgba(197, 160, 89, 0.1));
         }
 
-        /* High-Prestige Grid for Subscriptions */
-        .tier-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px; /* Thin lines like a luxury catalog */
-            background: #222;
-            border: 1px solid #222;
-            width: 100%;
+        /* Bento Presentation Grid */
+        .bento-container {
+            display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px;
+            padding: 100px 4%; max-width: 1600px; margin: auto;
         }
 
-        .tier-item {
-            background: var(--deep-black);
-            padding: 60px 20px;
-            text-align: center;
-            transition: background 0.3s;
+        .bento-box {
+            background: var(--interface-panel);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px; padding: 40px;
+            transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .bento-box:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+
+        .span-8 { grid-column: span 8; }
+        .span-4 { grid-column: span 4; }
+        .span-12 { grid-column: span 12; }
+
+        /* Technical Metadata Labels */
+        .label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 15px; display: block; }
+        h2 { font-size: 2rem; margin: 0 0 15px 0; font-weight: 900; letter-spacing: -1px; }
+
+        /* Interactive Elements */
+        .cta-primary {
+            display: inline-block; padding: 18px 45px; background: var(--accent-gold);
+            color: #000; text-decoration: none; font-weight: 900; font-size: 0.8rem;
+            letter-spacing: 2px; text-transform: uppercase; margin-top: 30px;
         }
 
-        .tier-item:hover {
-            background: var(--vexilla-blue);
-        }
+        .auth-portal { background: #0a0a0a; border: 1px solid var(--accent-cyan); display: flex; flex-direction: column; gap: 15px; }
+        .login-btn { background: transparent; border: 1px solid #333; color: #fff; padding: 12px; cursor: pointer; font-family: 'JetBrains Mono'; font-size: 0.7rem; }
+        .login-btn:hover { border-color: var(--accent-cyan); }
 
-        .tier-item h3 { font-size: 0.7rem; letter-spacing: 5px; color: var(--kin-gold); }
-        .tier-item .amount { font-size: 3rem; margin: 20px 0; font-weight: 200; }
+        /* Device Features Mockup Area */
+        .mockup-img { width: 100%; height: 350px; background: #000; margin-top: 20px; border: 1px dashed #333; display: flex; align-items: center; justify-content: center; color: #444; }
 
-        /* The "Naked" Navigation */
-        .magazine-nav {
-            position: fixed;
-            left: 50%;
-            bottom: 50px;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-        }
-
-        .page-dot {
-            width: 8px; height: 8px;
-            background: #444;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .active { background: var(--vexilla-blue); box-shadow: 0 0 10px var(--vexilla-blue); }
     </style>
 </head>
 <body>
 
-    <div class="gloss-overlay"></div>
-
-    <section>
-        <p style="letter-spacing: 10px; color: var(--kin-gold);">VEXILLA × SOLOMON KIN</p>
-        <div class="hero-text">MAKIN<br>ZINE</div>
-        <p style="margin-top: 40px; opacity: 0.5;">THE STANDARD FOR VISUAL SUPREMACY</p>
-    </section>
-
-    <section>
-        <div class="tier-grid">
-            <div class="tier-item">
-                <h3>SCOUT</h3>
-                <div class="amount">$10</div>
-                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
-            </div>
-            <div class="tier-item">
-                <h3>ELITE</h3>
-                <div class="amount">$50</div>
-                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
-            </div>
-            <div class="tier-item">
-                <h3>VANGUARD</h3>
-                <div class="amount">$150</div>
-                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
-            </div>
-            <div class="tier-item">
-                <h3>LEGEND</h3>
-                <div class="amount">$500</div>
-                <button style="background:none; border: 1px solid #444; color:white; padding: 10px 20px;">JOIN</button>
-            </div>
+    <nav>
+        <div class="brand">VEXILLA.AITS</div>
+        <div class="nav-nodes">
+            <a href="#showroom">[CORE_DEVICES]</a>
+            <a href="#os">[KINOS_KERNEL]</a>
+            <a href="#history">[LITERARY_ARCHIVE]</a>
+            <a href="#vault">[INVESTOR_VAULT]</a>
+            <a href="#community">[COMMUNITY_WAVE]</a>
         </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="label">VERSION_1.0 // PHILADELPHIA_NODE</span>
+            <h1>KIN MAG PRO v1</h1>
+            <p>A purpose-driven literary synthesizer. Redefining information density for the Focus Economy. Not a tablet—an evolution of the page.</p>
+            <a href="#vault" class="cta-primary">SECURE INVESTMENT ACCESS</a>
+        </div>
+        <div class="device-showroom"></div>
     </section>
 
-    <div class="magazine-nav">
-        <div class="page-dot active"></div>
-        <div class="page-dot"></div>
-        <div class="page-dot"></div>
+    <div class="bento-container">
+        <div class="bento-box span-8">
+            <span class="label">HARDWARE_SPEC // DISPLAY_STACK</span>
+            <h2>HYBRID E-INK & RLCD DUALITY</h2>
+            <p>The AITS Sync Controller manages a proprietary multi-layer display. Switch from high-refresh color diagrams to 0-power E-Ink for deep focus reading instantly.</p>
+            
+            <div class="mockup-img">[EXPLODED_VIEW_RENDER_v1]</div>
+        </div>
+
+        <div class="bento-box span-4 auth-portal">
+            <span class="label">SYSTEM_ACCESS // ENCRYPTED</span>
+            <h2>REGISTRY LOGIN</h2>
+            <p>Access the Private Registry & Collective Grant Portfolio.</p>
+            <button class="login-btn">IDENT_G: SECURE GOOGLE LOGIN</button>
+            <button class="login-btn" style="background: var(--accent-cyan); color: #000; border: none;">IDENT_BIO: BIOMETRIC HANDSHAKE</button>
+        </div>
+
+        <div class="bento-box span-4">
+            <span class="label">SOFTWARE_LOGIC // KinOS</span>
+            <h2>PURPOSE-DRIVEN KERNEL</h2>
+            <p>Zero-notification architecture. Air-gapped security modes for government and defense contracts. Built for focus, not friction.</p>
+            
+        </div>
+
+        <div class="bento-box span-8">
+            <span class="label">FINANCIAL_VAULT // GROWTH_MODEL</span>
+            <h2>THE FOCUS ECONOMY ROI</h2>
+            <p>Our model eliminates attention leakage, increasing Shiny Ad engagement by 350%. Leveraging non-dilutive grant capital from NSF, DARPA, and NEA to scale production.</p>
+            
+        </div>
+
+        <div class="bento-box span-12" style="text-align: center; border-top: 1px solid var(--accent-gold);">
+            <span class="label">MISSION_STATEMENT</span>
+            <h2>BUILDING THE WAVE.</h2>
+            <p>Vexilla.AITS is a technology collective dedicated to restoring the spatial identity of human knowledge. Through the Kin Mag Pro v1, we protect the dignity of the page.</p>
+        </div>
     </div>
 
+    <script>
+        // Subtle Parallax effect for the device showroom
+        window.addEventListener('scroll', function() {
+            const scroll = window.pageYOffset;
+            const showroom = document.querySelector('.device-showroom');
+            showroom.style.transform = 'translateY(' + (scroll * 0.2) + 'px)';
+        });
+    </script>
 </body>
 </html>
