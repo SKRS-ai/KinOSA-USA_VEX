@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPPORT TERMINAL | Makinzine Pro Hardware Ops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --obsidian: #020202;
+            --gold: #d4af37;
+            --terminal-cyan: #00f2ff;
+        }
+
+        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* 3X LOGO HEADER - THE UNBREAKABLE STANDARD */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.98);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.2rem 2rem; 
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo-box img { height: 240px; width: auto; display: block; }
+
+        /* SUPPORT GRID */
+        .support-card {
+            background: #050505;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .support-card:hover {
+            border-color: var(--terminal-cyan);
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+
+        .status-dot {
+            height: 8px; width: 8px; background: #39ff14; border-radius: 50%; display: inline-block; margin-right: 8px;
+            box-shadow: 0 0 10px #39ff14;
+        }
+    </style>
+</head>
+<body class="antialiased pt-[280px]">
+
+    <header>
+        <div class="header-container">
+            <div class="logo-box">
+                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+            </div>
+            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
+                <a href="mission-archives.html" class="opacity-50 hover:opacity-100 transition">Archives</a>
+                <span class="text-gold">Support Terminal</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-12 py-20">
+        
+        <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+            <div class="max-w-2xl">
+                <span class="text-gold font-black uppercase tracking-[0.5em] text-[10px] block mb-4">Post-Purchase Logic</span>
+                <h1 class="serif text-8xl italic">Hardware <br><span class="text-white">Assurance.</span></h1>
+            </div>
+            <div class="bg-white/5 px-6 py-4 rounded-full border border-white/10 flex items-center">
+                <span class="status-dot"></span>
+                <span class="mono text-[10px] tracking-widest uppercase">System Status: Nominal</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+            
+            <div class="support-card">
+                <h3 class="mono text-xs text-terminal-cyan mb-6 tracking-widest">// MANUAL_V2.0</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">Device Schematics</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">Access the complete hardware map, component registry, and KinOS maintenance protocols.</p>
+                <button class="text-[10px] font-black uppercase tracking-widest text-white border-b border-white/20 pb-1">Enter Library</button>
+            </div>
+
+            <div class="support-card">
+                <h3 class="mono text-xs text-terminal-cyan mb-6 tracking-widest">// KIN_OS_PATCH</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">Kernel Updates</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">Secure, over-the-air firmware updates for the .kin container environment and Neural Engine.</p>
+                <button class="text-[10px] font-black uppercase tracking-widest text-white border-b border-white/20 pb-1">Check Versions</button>
+            </div>
+
+            <div class="support-card">
+                <h3 class="mono text-xs text-terminal-cyan mb-6 tracking-widest">// EMERGENCY_CLR</h3>
+                <h4 class="text-2xl font-bold mb-4 italic">Security Recovery</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">Initiate hardware kill-switches or remote data sanitization for lost or compromised units.</p>
+                <button class="text-[10px] font-black uppercase tracking-widest text-white border-b border-white/20 pb-1">Access Protocol</button>
+            </div>
+
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-5xl mb-16 text-center italic">Operational Queries</h2>
+            <div class="space-y-12">
+                <div class="border-b border-white/5 pb-8">
+                    <h5 class="text-gold font-black uppercase text-[10px] tracking-widest mb-4">How do I verify my device's authenticity?</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">Every Makinzine Pro is laser-etched with a unique Vexilla ID that corresponds to a record in the Vanguard Registry. You can verify your hardware by scanning the ID within the Secure Portal.</p>
+                </div>
+                <div class="border-b border-white/5 pb-8">
+                    <h5 class="text-gold font-black uppercase text-[10px] tracking-widest mb-4">What is the "Naked Mode" reset?</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">A physical hardware sequence that restores the KinOS kernel to its factory state, permanently erasing all locally cached data in the .kin container for absolute security.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+        <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
+            Makinzine Pro Support Division // PHL-NODE-01
+        </div>
+    </footer>
+
+</body>
+</html>
