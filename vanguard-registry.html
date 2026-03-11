@@ -3,235 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VANGUARD REGISTRY | Philly Tech Corridor</title>
+    <title>VANGUARD REGISTRY | Squire to Oracle Pathway</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@100;400;700;900&display=swap');
-
-        :root {
-            --obsidian: #020202;
-            --gold: #d4af37;
-            --xp-green: #39ff14;
+        /* Specific Page Enhancements */
+        .rank-card {
+            background: #080808;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-radius: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
-
-        body { background-color: var(--obsidian); color: #e5e5e5; font-family: 'Inter', sans-serif; }
-        .serif { font-family: 'Playfair Display', serif; }
-
-        /* UNCH/**
- * VEXILLA AITS // GLOBAL NAVIGATION ENGINE
- * Version: 2026.03.11
- * Purpose: Connects the 14-page ecosystem for the Makinzine Pro launch.
- */
-
-const navLinks = [
-    { name: "Foundation", url: "index.html" },
-    { name: "Gov-Ops", url: "gov-ops-fulfillment.html" },
-    { name: "Vanguard", url: "vanguard-registry.html" },
-    { name: "Events", url: "events-gallery.html" },
-    { name: "Affiliations", url: "affiliations-awards.html" },
-    { name: "Technical", url: "technical-manifesto.html" },
-    { name: "Liaison", url: "secure-portal.html" },
-    { name: "Media", url: "press-media.html" },
-    { name: "Security", url: "privacy-security-protocol.html" },
-    { name: "Investors", url: "series-a-investor-deck.html" },
-    { name: "Archives", url: "mission-archives.html" },
-    { name: "Support", url: "support-terminal.html" },
-    { name: "Roadmap", url: "global-expansion-roadmap.html" },
-    { name: "Leadership", url: "leadership-governance.html" },
-    { name: "Patents", url: "patents-legal.html" }
-];
-
-// Logic to dynamically highlight active page and ensure logo link works
-document.addEventListener("DOMContentLoaded", () => {
-    const navContainer = document.querySelector('nav');
-    const currentPath = window.location.pathname.split("/").pop();
-
-    if (navContainer) {
-        navContainer.innerHTML = navLinks.map(link => {
-            const isActive = currentPath === link.url ? 'text-gold' : 'opacity-50 hover:opacity-100 transition';
-            return `<a href="${link.url}" class="${isActive}">${link.name}</a>`;
-        }).join('');
-    }
-});ANGING 3X LOGO HEADER ARCHITECTURE */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0,0,0,0.98);
-            backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 0.2rem 2rem; 
+        .rank-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
         }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1800px;
-            margin: 0 auto;
-        }
-
-        .logo-box img {
-            height: 240px; 
-            width: auto;
-            display: block;
-        }
-
-        /* LIVE TICKER */
-        .live-ticker {
+        .rank-badge {
+            width: 80px;
+            height: 80px;
             background: var(--gold);
             color: black;
-            font-size: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            padding: 0.5rem 0;
-            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
         }
-
-        /* LEADERBOARD CARDS */
-        .leaderboard-row {
-            background: rgba(255,255,255,0.02);
-            border-left: 4px solid #222;
-            transition: all 0.3s ease;
+        .connector-line {
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+            margin: 0 auto;
         }
-        .leaderboard-row:hover {
-            background: rgba(255,255,255,0.05);
-            border-left-color: var(--gold);
-            transform: translateX(10px);
-        }
-
-        /* INTAKE FORM STYLE */
-        input, select {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            outline: none;
-        }
-        input:focus { border-color: var(--gold); }
     </style>
 </head>
-<body class="antialiased pt-[260px]">
+<body class="antialiased">
 
     <header>
         <div class="header-container">
             <div class="logo-box">
-                <a href="index.html"><img src="logo_makinzine_pro.png" alt="MAKINZINE PRO"></a>
+                <a href="index.html">
+                    <img src="logo_makinzine_pro.png" alt="MAKINZINE PRO">
+                </a>
             </div>
-            <nav class="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
-                <a href="index.html" class="opacity-50 hover:opacity-100 transition">Foundation</a>
-                <a href="gov-ops-fulfillment.html" class="opacity-50 hover:opacity-100 transition">Gov-Ops</a>
-                <span class="text-gold">Vanguard Registry</span>
+            <nav>
+                <a href="index.html">Foundation</a>
+                <span class="text-gold">Vanguard</span>
+                <a href="technical-manifesto.html">Technical</a>
+                <a href="secure-portal.html">Liaison</a>
             </nav>
         </div>
     </header>
 
-    <div class="live-ticker">
-        PHILLY VANGUARD STATUS: PHASE II ACTIVE // 124 MENTEES ENROLLED // 14 GOV-CONTRACTS PENDING
-    </div>
+    <main class="max-w-7xl mx-auto px-12">
+        
+        <section class="mb-32">
+            <h1 class="serif text-8xl mb-8 italic">The Guild of <br><span class="text-white">High Intent.</span></h1>
+            <p class="text-2xl text-gray-500 font-light max-w-3xl leading-relaxed">
+                The Vanguard Registry is not just a list of users. It is a hierarchy of talent, moving the youth of Philadelphia from digital consumers to federal-grade operators.
+            </p>
+        </section>
 
-    <main class="max-w-7xl mx-auto px-12 py-32">
-        <div class="grid lg:grid-cols-2 gap-32">
+        <div class="grid lg:grid-cols-3 gap-12 items-start mb-40">
             
-            <div>
-                <h2 class="serif text-6xl mb-12">The Philadelphia <br><span class="text-gold italic">Leaderboard.</span></h2>
-                <p class="text-gray-500 mb-12 uppercase text-[10px] tracking-widest font-black">Top Asset Progress: Q1 2026</p>
-                
-                <div class="space-y-4">
-                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
-                        <div class="flex items-center gap-6">
-                            <span class="text-gold font-black text-2xl italic">01</span>
-                            <div>
-                                <h4 class="font-bold uppercase tracking-widest">Marcus V.</h4>
-                                <p class="text-[10px] text-gray-500">Mentorship: Level Max (Oracle)</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xp-green font-mono text-xs">24,500 XP</span>
-                            <p class="text-[8px] text-gray-600 uppercase">3 Gov Contracts Completed</p>
-                        </div>
-                    </div>
+            <div class="flex flex-col items-center">
+                <div class="rank-card w-full">
+                    <div class="rank-badge">RANK 01</div>
+                    <h3 class="serif text-4xl mb-4 italic text-gold">Squire</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Entry-level onboarding. Squires focus on "Naked Mode" literacy, learning to interact with the .kin container without the noise of the public internet.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gray-600 space-y-2">
+                        <li>• Basic Container Interaction</li>
+                        <li>• Haptic Feedback Training</li>
+                    </ul>
+                </div>
+                <div class="connector-line hidden lg:block"></div>
+            </div>
 
-                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
-                        <div class="flex items-center gap-6">
-                            <span class="text-gray-500 font-black text-2xl italic">02</span>
-                            <div>
-                                <h4 class="font-bold uppercase tracking-widest">Elena R.</h4>
-                                <p class="text-[10px] text-gray-500">Mentorship: Level 42 (Knight)</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xp-green font-mono text-xs">18,200 XP</span>
-                            <p class="text-[8px] text-gray-600 uppercase">1 Gov Contract Active</p>
-                        </div>
-                    </div>
+            <div class="flex flex-col items-center">
+                <div class="rank-card w-full border-gold/40 bg-[#0c0c0c]">
+                    <div class="rank-badge">RANK 02</div>
+                    <h3 class="serif text-4xl mb-4 italic text-gold">Knight</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        Operational status. Knights are cleared for federal contract simulation and local Gov-Ops fulfillment tasks under Vexilla supervision.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-white space-y-2">
+                        <li>• Data Integrity Auditing</li>
+                        <li>• Federal Node Connection</li>
+                    </ul>
+                </div>
+                <div class="connector-line hidden lg:block"></div>
+            </div>
 
-                    <div class="leaderboard-row p-6 flex justify-between items-center rounded-r-xl">
-                        <div class="flex items-center gap-6">
-                            <span class="text-gray-500 font-black text-2xl italic">03</span>
-                            <div>
-                                <h4 class="font-bold uppercase tracking-widest">Jordan T.</h4>
-                                <p class="text-[10px] text-gray-500">Mentorship: Level 12 (Squire)</p>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <span class="text-xp-green font-mono text-xs">4,100 XP</span>
-                            <p class="text-[8px] text-gray-600 uppercase">Training Phase: Hardware Logic</p>
-                        </div>
-                    </div>
+            <div class="flex flex-col items-center">
+                <div class="rank-card w-full">
+                    <div class="rank-badge">RANK 03</div>
+                    <h3 class="serif text-4xl mb-4 italic text-gold">Oracle</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                        System Architecture. Oracles design the next generation of .kin containers and serve as lead mentors in the Vexilla Arena labs.
+                    </p>
+                    <ul class="text-[10px] font-bold uppercase tracking-widest text-gray-600 space-y-2">
+                        <li>• Kernel Optimization</li>
+                        <li>• Strategic Leadership</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="bg-white/5 p-12 rounded-[40px] border border-white/10">
-                <h3 class="serif text-4xl mb-8">Join the <span class="text-gold italic">Quest.</span></h3>
-                <p class="text-sm text-gray-400 mb-10 leading-relaxed">
-                    Whether you are a community student looking to level up or a partner looking to sponsor a pod, enter the registry below to begin your technical evolution.
-                </p>
-                
-                <form class="space-y-6">
-                    <div class="flex flex-col">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Participant Name</label>
-                        <input type="text" placeholder="Legal or Guardian Signature Name">
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex flex-col">
-                            <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Registry Intent</label>
-                            <select>
-                                <option>Mentee (Student)</option>
-                                <option>Mentor (Advisor)</option>
-                                <option>Corporate Sponsor</option>
-                            </select>
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Location Hub</label>
-                            <select>
-                                <option>Center City Lab</option>
-                                <option>Philly West Hub</option>
-                                <option>Remote/Digital Pod</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-gold mb-2">Why do you align with our mission?</label>
-                        <textarea class="bg-white/5 border border-white/10 p-4 rounded-lg h-32 text-sm outline-none focus:border-gold" placeholder="Briefly explain your vision for the community and the state."></textarea>
-                    </div>
-                    <button class="w-full bg-gold text-black font-black py-5 rounded-2xl uppercase tracking-[0.3em] text-xs hover:bg-white transition shadow-xl">
-                        Verify and Submit Asset
-                    </button>
-                </form>
-            </div>
         </div>
+
+        
+
+        <div class="bg-white/5 p-20 rounded-[60px] border border-white/5 text-center mb-32">
+            <h2 class="serif text-5xl mb-8">Ascend the <span class="text-gold italic">Registry.</span></h2>
+            <p class="text-gray-500 mb-12 max-w-xl mx-auto">Registration requires a physical invitation from a Rank 02 Knight or an authorized Vexilla Node Director.</p>
+            <a href="secure-portal.html" class="inline-block bg-white text-black font-black py-6 px-12 rounded-full uppercase tracking-[0.4em] text-[10px] hover:bg-gold transition">Request Registry Verification</a>
+        </div>
+
     </main>
 
-    <footer class="py-20 bg-black border-t border-gold/30 text-center">
+    <footer class="py-20 text-center border-t border-white/5">
         <div class="text-[9px] tracking-[1em] text-gray-600 font-black uppercase">
-            Makinzine Pro Vanguard Registry // Authorized Hub: Philadelphia
+            Vanguard Registry Management // PHL-NODE-01
         </div>
     </footer>
 
 </body>
-
 </html>
