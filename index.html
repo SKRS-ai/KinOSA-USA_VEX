@@ -3,6 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKINZINE PRO | Official Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;900&display=swap');
+
+        :root {
+            --obsidian: #0a0a0a;
+            --gold: #d4af37;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* HERO LOGO STYLE */
+        .hero-logo {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 0.8;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 40%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* HARDWARE CHASSIS ENHANCEMENTS */
+        .device-container {
+            perspective: 2000px;
+        }
+
+        .makinzine-chassis {
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 30px;
+            background: #111;
+            padding: 20px;
+            box-shadow: 0 0 100px rgba(212, 175, 55, 0.1);
+            position: relative;
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .makinzine-chassis:hover {
+            transform: rotateY(0deg) rotateX(0deg);
+        }
+
+        .hardware-logo-engraving {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 900;
+            letter-spacing: 0.8em;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* HAPTIC ANIMATION */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        .haptic-active {
+            animation: pulse 2s infinite;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--gold);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <div class="mb-4 text-gold font-bold tracking-[0.5em] uppercase text-xs">A Solomon Kin Production</div>
+        <h1 class="hero-logo">MAKINZINE<br><span class="italic text-gold">PRO</span></h1>
+        <p class="mt-8 text-gray-400 max-w-2xl text-lg font-light tracking-wide">
+            The world's first distraction-free digital terminal. Designed for the <span class="text-white border-b border-gold">Permanent Record</span>.
+        </p>
+        
+        <div class="mt-16 device-container w-full max-w-4xl">
+            <div class="makinzine-chassis haptic-active">
+                <img src="hero_front.jpg" alt="Makinzine Pro Display" class="w-full rounded-2xl shadow-2xl">
+                <div class="hardware-logo-engraving">MAKINZINE PRO</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="serif text-6xl italic mb-8">Naked Mode.<br>Zero Interruptions.</h2>
+                    <p class="text-gray-400 text-xl leading-relaxed mb-8">
+                        Right out of the box, the <strong>Vexilla Daily</strong> presents the world to you in a high-prestige 15-page standard. No notifications. No battery anxiety. Just pure intent.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="text-gold mr-4">/ 01</span>
+                            <span><strong>Standardized 15-Page Count:</strong> Curated for focus.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gold mr-4">/ 02</span>
+                            <span><strong>Live Ink Portraits:</strong> Subtle cinemagraphs that breathe life into journalism.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gold mr-4">/ 03</span>
+                            <span><strong>Proximity Narration:</strong> Tap to activate professional-grade audio playback.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="feature-card p-8 rounded-3xl">
+                        <img src="spine_close.jpg" alt="Haptic Spine" class="w-full h-32 object-cover rounded-xl mb-4 opacity-70">
+                        <h4 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-2">Tactile Layer</h4>
+                        <p class="text-xs text-gray-400">Haptic spine mimicking the weight of physical paper.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-3xl mt-8">
+                        <img src="sightless_rear.jpg" alt="Rear Interface" class="w-full h-32 object-cover rounded-xl mb-4 opacity-70">
+                        <h4 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-2">Sightless Core</h4>
+                        <p class="text-xs text-gray-400">Braille-enabled muscle memory navigation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-white text-black text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h3 class="text-[12vw] font-black leading-none tracking-tighter uppercase mb-8">
+                MAKINZINE<br>PRO
+            </h3>
+            <p class="text-sm font-bold tracking-[0.4em] uppercase">The New Standard for Human Knowledge</p>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/10 text-center">
+        <div class="text-[10px] tracking-[0.5em] text-gray-500 uppercase">
+            Solomon Kin x Vexilla AITS | Philadelphia Tech Corridor | 2026
+        </div>
+    </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAKINZINE PRO | The Permanent Record</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -149,3 +315,4 @@
 
 </body>
 </html>
+
